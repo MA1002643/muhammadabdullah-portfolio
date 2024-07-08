@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.contact-me {
+  height: max-content;
+  font-family: "Ubuntu", sans-serif;
+  background-color: black;
+  padding-bottom: 2%;
+}
+
+.max-width1 {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.contact-me .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-me .title::after {
+  content: "get in touch";
+}
+
+.contact-me .right {
+  width: calc(50% - 30px);
+}
+
+.contact-me .left {
+  width: calc(50% - 30px);
+}
+
+.contact-me .contact-content .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2d9687;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.contact-me .contact-content .left p {
+  text-align: justify;
+  color: #a6a6a4;
+}
+
+.contact-me .contact-content .left .icons {
+  margin: 10px 0;
+}
+
+.contact-me .contact-content .row {
+  display: flex;
+  height: 65px;
+  align-items: center;
+}
+
+.contact-me .contact-content .row .info {
+  margin-left: 30px;
+}
+
+.contact-me .contact-content .row i {
+  font-size: 25px;
+  color: #e9b171;
+}
+
+.contact-me .contact-content .info .head {
+  font-weight: bolder;
+  color: #c22085;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.contact-me .contact-content .info .sub-title {
+  color: #a6a6a4;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.contact-me .right {
+  padding: 5px;
+  box-shadow: 0 0 30px #2d9687;
+  border: 1px solid #2d9687;
+  border-radius: 10px;
+}
+
+.contact-me .right form .fields {
+  display: flex;
+}
+
+.contact-me .right form .field,
+.contact-me .right form .fields .field {
+  height: 45px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact-me .right form .textarea {
+  min-height: 80px;
+  width: 100%;
+}
+
+.contact-me .right form .name {
+  margin-right: 10px;
+}
+
+.contact-me .right form .field input,
+.contact-me .right form .textarea textarea {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #c22085;
+  border-radius: 6px;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  background-color: black;
+  color: #2d9687;
+}
+
+.contact-me .right form .field input:focus,
+.contact-me .right form .textarea textarea:focus {
+  border-color: #2d9687;
+}
+
+.contact-me .right form .textarea textarea {
+  padding-top: 10px;
+  resize: none;
+  position: relative;
+  color: #2d9687;
+}
+
+.contact-me .right form .button-area {
+  display: flex;
+  align-items: center;
+}
+
+#gooey-button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  width: 150px;
+  color: rgb(2, 48, 32);
+  position: relative;
+  background-color: #2d9687;
+  box-shadow: 0 0 30px #2d9687;
+}
+
+.right form i {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 980px) {
+  .contact-me .right {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .contact-me .left {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 540px) {
+  .contact-me .right {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .contact-me .right {
+    padding: 5px;
+    box-shadow: 0 0 30px #2d9687;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .max-width1 {
+    max-width: 1300px;
+    padding: 0 30px;
+    margin: auto;
+  }
+
+  .contact-me .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-me .right form .fields {
+    flex-direction: column;
+  }
+
+  .contact-me .right form .name,
+  .contact-me .right form .email {
+    margin: 0;
+  }
+
+  .right form .error-box {
+    width: 150px;
+  }
+
+  .scroll-up-btn {
+    right: 15px;
+    bottom: 15px;
+    height: 38px;
+    width: 35px;
+    font-size: 23px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 375px) {
+  .contact-me .contact-content .row .info {
+    margin-left: 15px;
+  }
+  .max-width1 {
+    max-width: 1300px;
+    padding: -1;
+    margin: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-me .contact-content .info .head {
+    font-weight: bolder;
+    color: #c22085;
+    font-size: 15px;
+  }
+
+  .contact-me .contact-content .info .sub-title {
+    color: #a6a6a4;
+    font-size: small;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact-me .contact-content .left .icons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: -40px;
+  }
+}
+
+@media (max-width: 280px) {
+  .contact-me .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .contact-me .contact-content .left p {
+    text-align: justify;
+    color: #a6a6a4;
+    font-size: 15px;
+  }
+
+  .contact-me .contact-content .info .head {
+    font-weight: bolder;
+    color: #c22085;
+    font-size: 15px;
+  }
+
+  .contact-me .contact-content .info .sub-title {
+    color: #a6a6a4;
+    font-size: 13px;
+  }
+
+  .contact-me .contact-content .row i {
+    font-size: 15px;
+    color: #e9b171;
+  }
+}

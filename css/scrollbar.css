@@ -1,0 +1,33 @@
+html {
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#progressBarContainer {
+  position: fixed;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+}
+
+#progressBar {
+  position: absolute;
+  background: linear-gradient(to top, #e9b171, #c22085, #2d9687);
+  transform-origin: top center;
+  transform: scale(1, 0);
+  opacity: 0;
+  border-radius: 30px;
+}
+
+#progressBarContainer,
+#progressBar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  border-radius: 30px;
+}

@@ -1,0 +1,873 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.projectscroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: linear-gradient(to top, #e9b171, #c22085, #2d9687);
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 999;
+  font-size: 30px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.projectscroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.projectscroll-up-btn:hover {
+  filter: brightness(90%);
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: black;
+}
+
+.projectnavbar {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 20px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.projectnavbar.sticky {
+  padding: 10px 0;
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+
+.projectnavbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  flex-direction: row;
+}
+
+#projectnavbar__logo {
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.5s ease-in;
+}
+
+#projectnavbar__logo img {
+  height: 40px;
+  width: 50px;
+}
+
+.projectnavbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.projectnavbar__item {
+  height: 60px;
+  font-weight: bold;
+  padding: 0.2em;
+  font-family: "Domine", serif;
+}
+
+.projectnavbar__links {
+  font-size: 1.1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  text-decoration: none;
+  height: 100%;
+  transition: all 0.3s ease;
+  transition: 0.5s;
+}
+
+.projectnavbar__links:hover {
+  color: #e9b171;
+  transition: all 0.3s ease;
+}
+
+.project3 {
+  position: relative;
+  height: 100%;
+  background-color: black;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.project3 .max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.project3 .title {
+  color: #2d9687;
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  padding-bottom: 100px;
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 100px;
+}
+
+.project3 p {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 200;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-right: -30px;
+  position: relative;
+}
+
+.box {
+  flex: 0 0 70%;
+  max-width: 45%;
+  height: 415px;
+  top: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.original-box {
+  background-color: transparent;
+  padding: 30px 15px;
+  border: 1px solid #2d9687;
+  border-radius: 10px;
+  width: 100%;
+  height: 340px;
+  position: relative;
+}
+
+.shadow {
+  box-shadow: 0 0 30px #2d9687;
+}
+
+.line {
+  position: absolute;
+  bottom: 55px;
+  background: black;
+  width: 110%;
+  left: -5%;
+  height: 25px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border: 1px solid #2d9687;
+  box-shadow: 0 8px 21px 3px #2d9687;
+}
+
+.lineone {
+  position: absolute;
+  background: black;
+  width: 30%;
+  left: 36%;
+  height: 15px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-bottom: 1px solid #2d9687;
+  margin: auto;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.animation {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 2s ease-in-out;
+}
+
+.animation.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation1 {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 2s ease-in-out;
+}
+
+.animation1.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation2 {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 2s ease-in-out;
+}
+
+.animation2.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.role {
+  font-size: 1.875rem;
+  line-height: 3rem;
+  max-width: 700px;
+  width: 90%;
+  font-family: inconsolata, monospace;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.role p {
+  color: #c22085;
+}
+
+article {
+  margin: 12.5% auto;
+  width: 770px;
+  text-align: center;
+  max-width: 100%;
+  position: relative;
+}
+
+article h1 {
+  font-size: 2.1875rem;
+  margin-bottom: 0.2em;
+  font-family: open sans, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.FeaturesWrap h2 {
+  color: #c22085;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+article p {
+  font-size: 1.25rem;
+  font-family: "Merienda", cursive;
+}
+
+.FeaturesWrap p {
+  font-size: 1.25rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+@media screen and (max-width: 1200px) {
+  .original-box {
+    background-color: transparent;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 260px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 37px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .box {
+    flex: 0 0 70%;
+    max-width: 35%;
+    height: 317px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .original-box {
+    background-color: transparent;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 240px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 59px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .original-box {
+    background-color: transparent;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 220px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 75px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .project3 .max-width {
+    max-width: 1300px;
+    padding: 0 25px;
+    margin: auto;
+  }
+
+  .box {
+    flex: 0 0 70%;
+    max-width: 35%;
+    height: 300px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 59px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 78px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 78px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 643px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 190px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 89px;
+    background: black;
+    width: 115%;
+    left: -7.5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    height: 190px;
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 60px;
+    background: black;
+    width: 115%;
+    left: -7.5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .box {
+    flex: 0 0 70%;
+    max-width: 45%;
+    height: 270px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .box {
+    flex: 0 0 85%;
+    max-width: 50%;
+    height: 270px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 190px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 60px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .role p {
+    color: #c22085;
+    font-size: 15px;
+  }
+
+  article h1 {
+    font-size: 2rem;
+    margin-bottom: 0.2em;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 434px) {
+  .box {
+    flex: 0 0 85%;
+    max-width: 80%;
+    height: 270px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 250px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: -1px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .lineone {
+    position: absolute;
+    background: black;
+    width: 40%;
+    left: 30%;
+    height: 15px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom: 1px solid #2d9687;
+    margin: auto;
+  }
+
+  article h1 {
+    font-size: 1.257rem;
+    margin-bottom: 0.2em;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .projectnavbar {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .projectnavbar__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px;
+    flex-direction: column;
+  }
+
+  .project3 {
+    position: relative;
+    height: 100%;
+    background-color: black;
+    top: 120px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+
+  .role p {
+    color: #c22085;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .box {
+    flex: 0 0 85%;
+    max-width: 70%;
+    height: 270px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 220px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 30px;
+    background: black;
+    width: 115%;
+    left: -7.5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 200px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 49px;
+    background: black;
+    width: 115%;
+    left: -7.5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 180px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 71px;
+    background: black;
+    width: 115%;
+    left: -7.5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .project3 .title {
+    color: #2d9687;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: "Ubuntu", sans-serif;
+    padding-top: 0px;
+  }
+
+  .box {
+    flex: 0 0 85%;
+    max-width: 65%;
+    height: 192px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 150px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 20px;
+    background: black;
+    width: 110%;
+    left: -5%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .project3 .title {
+    color: #2d9687;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Ubuntu", sans-serif;
+    padding-top: 0px;
+  }
+
+  .project3 p {
+    color: white;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 200;
+  }
+
+  .box {
+    flex: 0 0 85%;
+    max-width: 65%;
+    height: 190px;
+    top: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 151px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 17px;
+    background: black;
+    width: 120%;
+    left: -10%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .role p {
+    color: #c22085;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .project3 .title {
+    color: #2d9687;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Ubuntu", sans-serif;
+    padding-top: 0px;
+  }
+
+  .original-box {
+    background-color: black;
+    padding: 30px 15px;
+    border: 1px solid #2d9687;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 140px;
+  }
+
+  .line {
+    position: absolute;
+    bottom: 30px;
+    background: black;
+    width: 115%;
+    left: -7%;
+    height: 25px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: 1px solid #2d9687;
+    box-shadow: 0 8px 21px 3px #2d9687;
+  }
+
+  .lineone {
+    position: absolute;
+    background: black;
+    width: 40%;
+    left: 30%;
+    height: 15px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom: 1px solid #2d9687;
+    margin: auto;
+  }
+}

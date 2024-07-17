@@ -1,0 +1,149 @@
+body {
+  background-color: black;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.home {
+  display: flex;
+  background-image: url("/background2.png");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.home .max-width {
+  margin: auto 0 auto 0;
+}
+
+.home-content {
+  margin-left: 28px;
+  transition: all 0.5s ease-out;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+  -webkit-transition: 1s;
+  animation: reveal 2.5s linear forwards;
+  opacity: 0;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+  transition: all 0.5s ease-out;
+  -webkit-transition: 1s;
+  animation: reveal 2.5s linear forwards;
+  opacity: 0;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+  transition: all 0.5s ease-out;
+  -webkit-transition: 1s;
+  animation: reveal 2.5s linear forwards;
+  opacity: 0;
+}
+
+.home .home-content .text-3 span {
+  color: #2d9687;
+  font-weight: 500;
+  -webkit-transition: 1s;
+  animation: reveal 2.5s linear forwards;
+}
+
+@keyframes reveal {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .home-content {
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .home .home-content .text-2 {
+    font-size: 60px;
+    transition: all 0.5s ease-in;
+  }
+  .home .home-content .text-3 {
+    font-size: 32px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home .home-content .text-2 {
+    font-size: 55px;
+    transition: all 0.5s ease-in;
+  }
+  .home .home-content .text-3 {
+    font-size: 32px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home .home-content .text-2 {
+    font-size: 45px;
+    transition: all 0.5s ease-in;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 27px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .home .home-content .text-2 {
+    font-size: 30px;
+    transition: all 0.5s ease-in;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 20px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home .home-content .text-2 {
+    font-size: 27px;
+    transition: all 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .home .home-content .text-1 {
+    font-size: 20px;
+  }
+
+  .home .home-content .text-2 {
+    font-size: 18px;
+    transition: all 0.5s ease-in;
+  }
+
+  .home .home-content .text-3 {
+    font-size: 15px;
+    transition: all 0.5s ease-in;
+  }
+
+  .home .home-content .text-3 span {
+    color: #2d9687;
+    font-weight: 500;
+    -webkit-transition: 1s;
+    animation: reveal 2.5s linear forwards;
+    filter: blur(13px);
+  }
+}

@@ -1,0 +1,105 @@
+footer {
+  background-color: black;
+}
+.social {
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.social a {
+  display: block;
+  background: #c22085;
+  padding: 20px;
+
+  transform: perspective(1000px) rotate(-25deg) skew(25deg) translate(0, 0);
+  box-shadow: -20px 20px 10px #c22085;
+  transition: all 0.5s ease-in-out;
+  margin: 40px;
+}
+.social a::before {
+  dislpay: block;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  left: -20px;
+  top: 10px;
+  background: #c22085;
+  transform: rotate(0deg) skewY(-45deg);
+}
+.social a::after {
+  dislpay: block;
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  transform: rotate(0deg) skewX(-45deg);
+  background: #c22085;
+  transform: rotate(45deg) scewY(-45deg);
+}
+.social a:hover {
+  transform: perspective(1000px) rotate(-25deg) skew(25deg)
+    translate(20px, -20px);
+  box-shadow: -50px 50px 30px #c22085;
+}
+.social a i {
+  color: rgba(256, 256, 256, 1);
+  font-size: 30pt;
+}
+
+@media screen and (max-width: 915px) {
+  .social a i {
+    color: rgba(256, 256, 256, 1);
+    font-size: 27pt;
+  }
+}
+
+@media screen and (max-width: 885px) {
+  .social a i {
+    color: rgba(256, 256, 256, 1);
+    font-size: 20pt;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .social a i {
+    color: rgba(256, 256, 256, 1);
+    font-size: 15pt;
+  }
+
+  .social a {
+    display: block;
+    background: #c22085;
+    padding: 18px;
+    transform: perspective(1000px) rotate(-25deg) skew(25deg) translate(0, 0);
+    box-shadow: -20px 20px 10px #c22085;
+    transition: all 0.5s ease-in-out;
+    margin: 26px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social {
+    flex-direction: column;
+  }
+
+  .social a i {
+    color: rgba(256, 256, 256, 1);
+    font-size: 30pt;
+  }
+
+  .social a {
+    display: block;
+    background: #c22085;
+    padding: 20px;
+    transform: perspective(1000px) rotate(-25deg) skew(25deg) translate(0, 0);
+    box-shadow: -20px 20px 10px #c22085;
+    transition: all 0.5s ease-in-out;
+    margin: 40px;
+  }
+}

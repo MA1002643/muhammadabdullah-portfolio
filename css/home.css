@@ -51,7 +51,7 @@ body {
   opacity: 0;
 }
 
-.home .home-content .text-3 span {
+.home .home-content .text-3 .typing {
   color: #2d9687;
   font-weight: 500;
   -webkit-transition: 1s;

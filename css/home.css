@@ -3,6 +3,17 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.maintenance {
+  padding: 20px 0;
+  border: 8px solid red;
+  text-align: center;
+  color: white;
+  font: bold;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
 .home {
   display: flex;
   background-image: url("/background2.png");

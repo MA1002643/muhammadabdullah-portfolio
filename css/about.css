@@ -241,35 +241,51 @@
 }
 
 .skills__html {
-  width: 70%;
+  width: 85%;
 }
 
 .skills__css {
-  width: 40%;
+  width: 80%;
 }
 
-.skills__js {
-  width: 20%;
-}
-
-.skills__react {
-  width: 10%;
-}
-
-.skills__java {
+.skills__jsfrontend {
   width: 50%;
 }
 
+.skills__react {
+  width: 30%;
+}
+
+.skills__dotnetfrontend {
+  width: 70%;
+}
+
+.skills__dotnetbackend {
+  width: 50%;
+}
+
+.skills__jsbackend {
+  width: 50%;
+}
+
+.skills__Csharp {
+  width: 60%;
+}
+
+.skills__java {
+  width: 60%;
+}
+
 .skills__php {
-  width: 5%;
+  width: 15%;
 }
 
 .skills__python {
-  width: 5%;
+  width: 15%;
 }
 
 .skills__sql {
-  width: 20%;
+  width: 30%;
 }
 
 .skills__ap {

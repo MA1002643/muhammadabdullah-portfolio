@@ -73,6 +73,12 @@ body {
   animation: reveal 2.5s linear forwards;
 }
 
+.Home-Des {
+  width: 70%;
+  margin-right: 30px;
+  color: #e9b171;
+}
+
 @keyframes reveal {
   100% {
     opacity: 1;
@@ -104,6 +110,12 @@ body {
   }
   .home .home-content .text-3 {
     font-size: 32px;
+    transition: all 0.5s ease-in;
+  }
+
+  .Home-Des {
+    width: 100%;
+    padding-right: 40px;
     transition: all 0.5s ease-in;
   }
 }

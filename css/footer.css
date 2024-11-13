@@ -13,7 +13,6 @@ footer {
   display: block;
   background: #c22085;
   padding: 20px;
-
   transform: perspective(1000px) rotate(-25deg) skew(25deg) translate(0, 0);
   box-shadow: -20px 20px 10px #c22085;
   transition: all 0.5s ease-in-out;
@@ -85,7 +84,8 @@ footer {
 
 @media screen and (max-width: 600px) {
   .social {
-    flex-direction: column;
+    margin: 15px;
+    flex-wrap: wrap;
   }
 
   .social a i {
@@ -101,5 +101,20 @@ footer {
     box-shadow: -20px 20px 10px #c22085;
     transition: all 0.5s ease-in-out;
     margin: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .social {
+    margin: 25px;
+  }
+
+  .social a {
+    padding: 10px;
+    margin: 25px;
+  }
+
+  .social a i {
+    font-size: 12pt;
   }
 }

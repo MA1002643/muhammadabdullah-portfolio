@@ -107,7 +107,7 @@ var typed = new Typed(".typing-2", {
   loop: true,
 });
 
-//about page education experience button
+//about page education/experience button
 
 const buttons = document.querySelector(".buttonsabout");
 const panels = document.querySelectorAll(".rownew");
@@ -167,3 +167,24 @@ var loader = document.getElementById("preloader");
 window.addEventListener("load", function () {
   loader.style.display = "none";
 });
+
+// MIXITUP FILTER Project
+const mixer = mixitup(".containerproject", {
+  selectors: {
+    target: ".card",
+  },
+  animation: {
+    duration: 800,
+  },
+});
+
+// Link active Project
+const linkProject = document.querySelectorAll(".project_item");
+
+function activeProject() {
+  if (linkProject) {
+    linkProject.forEach((L) => L.classList.remove("active-project"));
+    this.classList.add("active-project");
+  }
+}
+linkProject.forEach((L) => L.addEventListener("click", activeProject));

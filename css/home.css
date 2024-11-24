@@ -3,21 +3,6 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
-.maintenance {
-  padding: 20px 0;
-  border: 2px solid red;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: medium;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
-}
-
 .home {
   display: flex;
   background-image: url("/background2.png");
@@ -80,6 +65,28 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.scrolling-text-container {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  background: black;
+  margin-top: 20px;
+  border-bottom: 2px solid red;
+  border-top: 2px solid red;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.scrolling-text-container span {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 8px 20px;
+  background: red;
+  color: white;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+}
+
 @keyframes reveal {
   100% {
     opacity: 1;
@@ -131,6 +138,10 @@ body {
     font-size: 27px;
     transition: all 0.5s ease-in;
   }
+
+  .scrolling-text-container {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 393px) {
@@ -142,6 +153,10 @@ body {
   .home .home-content .text-3 {
     font-size: 20px;
     transition: all 0.5s ease-in;
+  }
+
+  .scrolling-text-container {
+    width: 90%;
   }
 }
 

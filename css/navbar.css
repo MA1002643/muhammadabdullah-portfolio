@@ -12,7 +12,6 @@
   padding: 20px 0;
   font-family: "Ubuntu", sans-serif;
   transition: all 0.3s ease;
-  top: 62px;
 }
 
 .navbar.sticky {
@@ -193,16 +192,4 @@
 
 .scroll-up-btn:hover {
   filter: brightness(90%);
-}
-
-@media screen and (max-width: 877px) {
-  .navbar {
-    top: 80px;
-  }
-}
-
-@media screen and (max-width: 464px) {
-  .navbar {
-    top: 98px;
-  }
 }

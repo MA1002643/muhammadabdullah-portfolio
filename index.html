@@ -30,6 +30,10 @@
       crossorigin="anonymous"
     />
     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
@@ -52,64 +56,74 @@
   </head>
 
   <body>
-    <div id="progressBarContainer">
-      <div id="progressBar"></div>
-    </div>
-
-    <div class="scroll-up-btn">
-      <i class="fas fa-angle-up"></i>
-    </div>
-
     <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <a href="#home" id="navbar__logo">
-          <img src="/images/Website/logo.png" alt="Logo Image" />
-        </a>
-
-        <div class="navbar__toggle" id="mobile-menu">
-          <span class="bar"></span> <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <a href="#home" class="navbar__links" id="home-page"
-              ><span>Home</span></a
-            >
-          </li>
-
-          <li class="navbar__item">
-            <a href="#about" class="navbar__links" id="about-page">About</a>
-          </li>
-
-          <li class="navbar__item">
-            <a
-              href="#qualifications"
-              class="navbar__links"
-              id="qualifications-page"
-              >Qualifications</a
-            >
-          </li>
-
-          <li class="navbar__item">
-            <a href="#projects" class="navbar__links" id="projects-page"
-              >Projects</a
-            >
-          </li>
-
-          <li class="navbar__item">
-            <a href="#CV" class="navbar__links" id="CV-page">CV</a>
-          </li>
-
-          <li class="navbar__item">
-            <a href="#contact-me" class="navbar__links" id="contactme-page"
-              >Contact me</a
-            >
-          </li>
-        </ul>
+    <header class="header" id="header">
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
       </div>
-    </nav>
+
+      <nav class="nav container">
+        <div class="nav_menu" id="navMenu">
+          <ul class="nav_list" id="navList">
+            <div id="navbar__logo">
+              <img src="/images/Website/logo.png" alt="Logo Image" />
+            </div>
+            <li class="nav_item active_link">
+              <a href="#home" class="nav_link">
+                <box-icon
+                  name="home"
+                  color="rgba(255, 255, 255, 0.8"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li class="nav_item">
+              <a href="#about" class="nav_link">
+                <box-icon
+                  name="user"
+                  color="rgba(255, 255, 255, 0.8"
+                  type="solid"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li class="nav_item">
+              <a href="#qualifications" class="nav_link">
+                <box-icon
+                  name="book"
+                  color="rgba(255, 255, 255, 0.8"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li class="nav_item">
+              <a href="#projects" class="nav_link">
+                <box-icon
+                  name="briefcase"
+                  type="solid"
+                  color="rgba(255, 255, 255, 0.8"
+                ></box-icon>
+              </a>
+            </li>
+
+            <li class="nav_item">
+              <a href="#contact-me" class="nav_link">
+                <box-icon
+                  name="phone-call"
+                  type="solid"
+                  animation="tada"
+                  rotate="90"
+                  color="rgba(255, 255, 255, 0.8"
+                ></box-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="nav_toggle" id="navToggle" aria-label="Toggle Menu">
+          <img src="/images/Website/logo.png" alt="Logo Image" />
+        </button>
+      </nav>
+    </header>
 
     <!-- Home Section -->
     <section class="home" id="home">
@@ -126,7 +140,7 @@
             <span>Headline</span>
             <marquee behavior="" direction="left">
               The website is getting updated, it won't be long for an updated
-              version to be available. Last Updated on 25/11/2024.</marquee
+              version to be available. Last Updated on 26/12/2024.</marquee
             >
           </div>
         </div>
@@ -1478,6 +1492,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
     <script src="/Js/mixitup.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="/js/app.js"></script>
   </body>
 </html>

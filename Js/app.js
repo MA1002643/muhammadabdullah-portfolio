@@ -1,52 +1,28 @@
-const menu = document.querySelector("#mobile-menu");
-const menuLinks = document.querySelector(".navbar__menu");
-const navLogo = document.querySelector("#navbar__logo");
-
-// Display Mobile Menu
-const mobileMenu = () => {
-  menu.classList.toggle("is-active");
-  menuLinks.classList.toggle("active");
+// onload take to top of the screen
+window.onload = function () {
+  window.scrollTo(0, 0);
 };
 
-menu.addEventListener("click", mobileMenu);
+// navbar toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navLinks = document.querySelectorAll(".nav_link");
 
-//  Close mobile Menu when clicking on a menu item
-const hideMobileMenu = () => {
-  const menuBars = document.querySelector(".is-active");
-  if (window.innerWidth <= 980 && menuBars) {
-    menu.classList.toggle("is-active");
-    menuLinks.classList.remove("active");
-  }
-};
+  // Toggle menu visibility
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
 
-menuLinks.addEventListener("click", hideMobileMenu);
-navLogo.addEventListener("click", hideMobileMenu);
-
-// when scroll down navbar changes color
-
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if (this.scrollY > 20) {
-      $(".navbar").addClass("sticky");
-    } else {
-      $(".navbar").removeClass("sticky");
-    }
-    if (this.scrollY > 500) {
-      $(".scroll-up-btn").addClass("show");
-    } else {
-      $(".scroll-up-btn").removeClass("show");
-    }
+  // Close menu after clicking a nav link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
   });
 });
 
-// slide-up script
-$(".scroll-up-btn").click(function () {
-  $("html").animate({ scrollTop: 0 });
-  $("html").css("scrollBehavior", "auto");
-});
-
 //scroll bar
-
 const progressBarContainer = document.querySelector("#progressBarContainer");
 const progressBar = document.querySelector("#progressBar");
 let totalPageHeight = document.body.scrollHeight - window.innerHeight;
@@ -78,6 +54,24 @@ progressBarContainer.addEventListener("click", (e) => {
   window.scrollTo({
     top: newPageScroll,
     behavior: "smooth",
+  });
+});
+
+// navbar
+
+// Select all nav links
+const navLinks = document.querySelectorAll(".nav_link");
+
+// Function to handle click event
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    // Remove 'active_link' class from all nav items
+    navLinks.forEach((nav) => {
+      nav.parentElement.classList.remove("active_link");
+    });
+
+    // Add 'active_link' class to the clicked nav item
+    this.parentElement.classList.add("active_link");
   });
 });
 
@@ -158,14 +152,6 @@ var swiper = new Swiper(".swiper-container", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-});
-
-// for logo loader
-
-var loader = document.getElementById("preloader");
-
-window.addEventListener("load", function () {
-  loader.style.display = "none";
 });
 
 // MIXITUP FILTER Project

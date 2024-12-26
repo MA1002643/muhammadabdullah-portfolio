@@ -1,37 +1,42 @@
+:root {
+  --first-hue: 34;
+  --sat: 70%;
+  --lig: 65%;
+  --second-hue: 219;
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 50%); /* -4% */
+  --title-color: hsl(var(--second-hue), 15%, 95%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --text-color-light: hsl(var(--second-hue), 4%, 55%);
+  --body-color: hsl(var(--second-hue), 48%, 8%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.projectscroll-up-btn {
-  position: fixed;
-  height: 45px;
-  width: 42px;
-  background: linear-gradient(to top, #e9b171, #c22085, #2d9687);
-  right: 30px;
-  bottom: 10px;
-  text-align: center;
-  line-height: 45px;
-  color: #fff;
-  z-index: 999;
-  font-size: 30px;
-  border-bottom-width: 2px;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-}
-
-.projectscroll-up-btn.show {
-  bottom: 30px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.projectscroll-up-btn:hover {
-  filter: brightness(90%);
 }
 
 body {
@@ -39,77 +44,81 @@ body {
   background-color: black;
 }
 
-.projectnavbar {
-  background: transparent;
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
   position: fixed;
-  width: 100%;
-  z-index: 999;
-  padding: 20px 0;
-  font-family: "Ubuntu", sans-serif;
-  transition: all 0.3s ease;
+  bottom: 1rem;
+  background-color: transparent;
+  z-index: var(--z-fixed);
 }
 
-.projectnavbar.sticky {
-  padding: 10px 0;
-  background: #0f2027;
-  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-}
-
-.projectnavbar__container {
-  display: flex;
-  justify-content: space-between;
-  height: 60px;
-  z-index: 1;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 50px;
-  flex-direction: row;
-}
-
-#projectnavbar__logo {
-  background-size: 100%;
-  display: flex;
-  align-items: center;
+#navbar__logo {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.5s ease-in;
-}
-
-#projectnavbar__logo img {
-  height: 40px;
-  width: 50px;
-}
-
-.projectnavbar__menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-.projectnavbar__item {
-  height: 60px;
-  font-weight: bold;
-  padding: 0.2em;
-  font-family: "Domine", serif;
-}
-
-.projectnavbar__links {
-  font-size: 1.1rem;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 125px;
-  text-decoration: none;
-  height: 100%;
-  transition: all 0.3s ease;
-  transition: 0.5s;
 }
 
-.projectnavbar__links:hover {
-  color: #e9b171;
-  transition: all 0.3s ease;
+#navbar__logo img {
+  height: 40px;
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_menu {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  width: 40%;
+  border-radius: 4rem;
+  padding: 1rem 2.25rem;
+  backdrop-filter: blur(10px);
+}
+
+.logo-message {
+  display: none;
+  font-size: 1.2rem;
+  color: #fff;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-container:hover .logo-message {
+  display: block;
+  opacity: 1;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-container:hover img {
+  transform: scale(1.1);
 }
 
 .project4 {
@@ -406,6 +415,23 @@ article p {
 }
 
 @media screen and (max-width: 980px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+    width: 30%;
+    border-radius: 4rem;
+    padding: 0.5rem 1.75rem;
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar__logo img {
+    height: 30px;
+    width: 40px;
+  }
+
   .project4 .max-width {
     max-width: 1300px;
     padding: 0 25px;
@@ -545,6 +571,23 @@ article p {
 }
 
 @media screen and (max-width: 550px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+    width: 30%;
+    border-radius: 4rem;
+    padding: 0.5rem 1.75rem;
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar__logo img {
+    height: 25px;
+    width: 35px;
+  }
+
   .box {
     flex: 0 0 85%;
     max-width: 50%;
@@ -642,6 +685,23 @@ article p {
 }
 
 @media screen and (max-width: 400px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+    width: 50%;
+    border-radius: 4rem;
+    padding: 0.5rem 1.75rem;
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar__logo img {
+    height: 30px;
+    width: 40px;
+  }
+
   .projectnavbar {
     position: fixed;
     width: 100%;
@@ -804,6 +864,18 @@ article p {
 }
 
 @media screen and (max-width: 280px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+    width: 60%;
+    border-radius: 4rem;
+    padding: 0.5rem 1.75rem;
+    backdrop-filter: blur(10px);
+  }
+
   .project4 .title {
     color: #2d9687;
     position: relative;
@@ -860,6 +932,23 @@ article p {
 }
 
 @media screen and (max-width: 240px) {
+  .nav_menu {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+    width: 80%;
+    border-radius: 4rem;
+    padding: 0.5rem 1.75rem;
+    backdrop-filter: blur(10px);
+  }
+
+  #navbar__logo img {
+    height: 30px;
+    width: 40px;
+  }
+
   .project4 .title {
     color: #2d9687;
     position: relative;

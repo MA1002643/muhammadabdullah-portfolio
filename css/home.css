@@ -87,6 +87,141 @@ body {
   clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  gap: 15px;
+}
+
+.downloadbutton {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: #c22085;
+  background: transparent;
+  border: 2px solid #c22085;
+  border-radius: 4rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.downloadbutton:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(194, 32, 133, 0.5);
+  border-color: #e033a5;
+}
+
+.downloadbutton:active {
+  transform: scale(0.97);
+}
+
+.square {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.square-button {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.square-button:hover {
+  transform: scale(1.1);
+}
+
+.square-button .buttonc {
+  font-size: 0;
+}
+
+.square-button .button__icon {
+  font-size: 20px;
+  margin-left: 0;
+  color: #c22085;
+}
+
+.square-button:hover .button__icon {
+  color: #e033a5;
+}
+
+.buttonc {
+  color: #c22085;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.downloadbutton:hover .buttonc {
+  color: #e033a5;
+}
+
+.button__icon {
+  margin-left: 8px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 40px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.stat-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px 30px;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  max-width: 300px;
+}
+
+.count {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #c22085;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.text {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes reveal {
   100% {
     opacity: 1;
@@ -98,6 +233,33 @@ body {
   .home-content {
     transition: all 0.5s ease-in;
   }
+  .downloadbutton {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .square-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .square-button .button__icon {
+    font-size: 18px;
+  }
+  .stats-container {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  .stat-box {
+    flex: 1 1 48%;
+    max-width: 100%;
+  }
+  .count {
+    font-size: 2.2rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 690px) {
@@ -108,6 +270,38 @@ body {
   .home .home-content .text-3 {
     font-size: 32px;
     transition: all 0.5s ease-in;
+  }
+  .downloadbutton {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .square-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .square-button .button__icon {
+    font-size: 16px;
+  }
+
+  .button-container {
+    gap: 10px;
+  }
+
+  .square {
+    gap: 10px;
+  }
+
+  .stats-container {
+    gap: 15px;
+  }
+
+  .count {
+    font-size: 2rem;
+  }
+  .text {
+    font-size: 0.9rem;
   }
 }
 
@@ -126,6 +320,39 @@ body {
     padding-right: 40px;
     transition: all 0.5s ease-in;
   }
+  .downloadbutton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .square-button {
+    width: 35px;
+    height: 35px;
+  }
+  .square-button .button__icon {
+    font-size: 14px;
+  }
+
+  .button-container {
+    gap: 8px;
+  }
+
+  .square {
+    gap: 8px;
+  }
+  .stats-container {
+    gap: 10px;
+    padding: 20px 10px;
+  }
+  .stat-box {
+    padding: 15px 10px;
+  }
+  .count {
+    font-size: 1.8rem;
+  }
+  .text {
+    font-size: 0.85rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -141,6 +368,40 @@ body {
 
   .scrolling-text-container {
     width: 90%;
+  }
+  .downloadbutton {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .square-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .square-button .button__icon {
+    font-size: 12px;
+  }
+
+  .button-container {
+    gap: 6px;
+  }
+
+  .square {
+    gap: 6px;
+  }
+
+  .stats-container {
+    padding: 15px 5px;
+  }
+  .stat-box {
+    padding: 10px 5px;
+  }
+  .count {
+    font-size: 1.6rem;
+  }
+  .text {
+    font-size: 0.8rem;
   }
 }
 
@@ -158,12 +419,79 @@ body {
   .scrolling-text-container {
     width: 90%;
   }
+
+  .downloadbutton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .square-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .square-button .button__icon {
+    font-size: 10px;
+  }
+
+  .button-container {
+    gap: 5px;
+  }
+
+  .square {
+    gap: 5px;
+  }
+
+  .stat-box {
+    padding: 8px 5px;
+  }
+  .count {
+    font-size: 1.4rem;
+  }
+  .text {
+    font-size: 0.75rem;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .home .home-content .text-2 {
     font-size: 27px;
     transition: all 0.5s ease-in;
+  }
+
+  .downloadbutton {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .square-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .square-button .button__icon {
+    font-size: 10px;
+  }
+
+  .button-container {
+    gap: 4px;
+  }
+
+  .square {
+    gap: 4px;
+  }
+
+  .stats-container {
+    gap: 5px;
+  }
+  .stat-box {
+    padding: 5px;
+  }
+  .count {
+    font-size: 1.2rem;
+  }
+  .text {
+    font-size: 0.7rem;
   }
 }
 
@@ -188,5 +516,40 @@ body {
     -webkit-transition: 1s;
     animation: reveal 2.5s linear forwards;
     filter: blur(13px);
+  }
+
+  .downloadbutton {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .square-button {
+    width: 20px;
+    height: 20px;
+  }
+
+  .square-button .button__icon {
+    font-size: 8px;
+  }
+
+  .button-container {
+    gap: 3px;
+  }
+
+  .square {
+    gap: 3px;
+  }
+
+  .stats-container {
+    padding: 5px;
+  }
+  .stat-box {
+    padding: 5px;
+  }
+  .count {
+    font-size: 1rem;
+  }
+  .text {
+    font-size: 0.65rem;
   }
 }

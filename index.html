@@ -140,8 +140,71 @@
             <span>Headline</span>
             <marquee behavior="" direction="left">
               The website is getting updated, it won't be long for an updated
-              version to be available. Last Updated on 26/12/2024.</marquee
+              version to be available. Last Updated on 02/01/2024.</marquee
             >
+          </div>
+          <div class="button-container">
+            <button type="button" class="downloadbutton">
+              <a
+                download=""
+                href="/Muhammad Abdullah CV.pdf"
+                class="buttonc button--flex"
+              >
+                Download CV
+                <i class="uil uil-download-alt button__icon"></i>
+              </a>
+            </button>
+            <div class="square">
+              <button type="button" class="downloadbutton square-button">
+                <a
+                  href="https://github.com/MA1002643"
+                  target="https://github.com/MA1002643"
+                  class="buttonc button--flex"
+                >
+                  <i class="uil uil-github button__icon"></i>
+                </a>
+              </button>
+
+              <button type="button" class="downloadbutton square-button">
+                <a
+                  href="https://www.linkedin.com/in/muhammad-abdullah227/"
+                  target="https://www.linkedin.com/in/muhammad-abdullah227/"
+                  class="buttonc button--flex"
+                >
+                  <i class="uil uil-linkedin button__icon"></i>
+                </a>
+              </button>
+
+              <button type="button" class="downloadbutton square-button">
+                <a
+                  href="https://twitter.com/Muhamma22721103"
+                  target="https://twitter.com/Muhamma22721103"
+                  class="buttonc button--flex"
+                >
+                  <i class="uil uil-twitter button__icon"></i>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="stats-container">
+            <div class="stat-box">
+              <span class="count" id="years-experience" data-target="0">0</span>
+              <span class="text">Years of Experience</span>
+            </div>
+            <div class="stat-box">
+              <span class="count" id="projects-completed" data-target="0"
+                >0</span
+              >
+              <span class="text">Projects Completed</span>
+            </div>
+            <div class="stat-box">
+              <span id="technologies-count" class="count">0</span>
+              <span class="text">Technologies Mastered</span>
+            </div>
+            <div class="stat-box">
+              <span class="count" id="code-commits" data-target="0">0</span>
+              <span class="text">Code Commits</span>
+            </div>
           </div>
         </div>
       </div>
@@ -480,8 +543,12 @@
             </div>
 
             <div class="buttonsabout">
-              <button data-id="education" class="button">Education</button>
-              <button data-id="experience" class="button">Experience</button>
+              <button data-id="education" class="button styled-button">
+                Education
+              </button>
+              <button data-id="experience" class="button styled-button">
+                Experience
+              </button>
             </div>
 
             <div class="rownew" id="education">
@@ -1366,34 +1433,16 @@
       </div>
     </section>
 
-    <!-- CV Section -->
-    <section class="CV" id="CV">
-      <div class="max-width">
-        <h2 class="title">Resume</h2>
-
-        <div class="about__buttons" id="gooey-button">
-          <a
-            download=""
-            href="/Muhammad Abdullah CV.pdf"
-            class="buttonc button--flex"
-          >
-            Download CV
-            <i class="uil uil-download-alt button__icon"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact me Section -->
     <section class="contact-me" id="contact-me">
       <div class="max-width1">
-        <h2 class="title">Contact me</h2>
+        <h2 class="title">Contact Me</h2>
 
         <div class="contact-content">
-          <!-- =====Personal Contact info Section===== -->
+          <!-- Personal Contact Info Section -->
           <div class="column left">
             <div class="text">Get in Touch</div>
-            <p>Do you have a question?. Don't hesitate to get in touch.</p>
+            <p>Do you have a question? Don't hesitate to get in touch.</p>
             <div class="icons">
               <div class="row">
                 <i class="fas fa-user"></i>
@@ -1406,7 +1455,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <div class="info">
                   <div class="head">Address</div>
-                  <div class="sub-title">Bolton, Manchester England</div>
+                  <div class="sub-title">Bolton, Manchester, England</div>
                 </div>
               </div>
               <div class="row">
@@ -1419,9 +1468,9 @@
             </div>
           </div>
 
-          <!-- =====Contact form Section===== -->
+          <!-- Contact Form Section -->
           <div class="column right">
-            <div class="text">Message me</div>
+            <div class="text">Message Me</div>
             <form
               action="https://formsubmit.co/muhammad.abdullah33176444@gmail.com"
               method="POST"
@@ -1454,41 +1503,24 @@
               </div>
               <div class="field textarea">
                 <textarea
+                  name="Message"
                   cols="30"
                   rows="10"
-                  name="Message"
-                  placeholder="Message.."
+                  placeholder="Message..."
                   required
                 ></textarea>
               </div>
-
-              <button id="gooey-button">
-                Send
-                <i class="fas fa-paper-plane"></i>
-              </button>
+              <div class="button-container">
+                <button id="gooey-button">
+                  Send <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="social">
-        <a href="https://www.facebook.com/profile.php?id=100026793993547"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a href="https://twitter.com/Muhamma22721103"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="https://www.instagram.com/muhammad_abdullah33/"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="https://github.com/MA1002643"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-abdullah227/"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-      </div>
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
     <script src="/Js/mixitup.min.js"></script>

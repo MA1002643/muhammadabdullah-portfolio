@@ -233,6 +233,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "MA1002643/HangMan",
       "MA1002643/Simple_Rectangle",
       "MA1002643/Button_Code",
+      "MA1002643/AMC",
+      "MA1002643/Programming-Two",
+      "MA1002643/Programming-One",
+      "MA1002643/Singer-Website",
+      "MA1002643/Grade-Calculator",
+      "MA1002643/Article-Server",
+      "MA1002643/First-Year-Final-Group-Project",
+      "MA1002643/CodeQuality",
+      "MA1002643/BlackjackSim",
+      "MA1002643/CahtWeb",
     ];
 
     const githubToken = "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"; // Add your token here

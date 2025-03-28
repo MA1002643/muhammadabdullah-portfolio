@@ -243,6 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "MA1002643/CodeQuality",
       "MA1002643/BlackjackSim",
       "MA1002643/CahtWeb",
+      "ManMetMobComp/mobcomp-assessment-MA1002643",
     ];
 
     const githubToken = "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"; // Add your token here

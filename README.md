@@ -212,7 +212,7 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>__root__</b></summary>
       <ul>
-         <li><b><a href="./background2.webp">background2.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="./background2.webp">background2.webp</a></b> — background2.webp</li>
          <li><b><a href="./htaccess">htaccess</a></b> — Repository file.</li>
          <li><b><a href="./index.html">index.html</a></b> — Static HTML markup for a page or template.</li>
          <li><b><a href="./LICENSE">LICENSE</a></b> — Repository file.</li>
@@ -263,59 +263,59 @@ This project provides a comprehensive, responsive portfolio website architecture
       <details>
          <summary><b>Project</b></summary>
       <ul>
-         <li><b><a href="images/Project/Chatroom.webp">Chatroom.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Project/IMRAN KHAN.webp">IMRAN KHAN.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Project/man.webp">man.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Project/Chatroom.webp">Chatroom.webp</a></b> — Chatroom.webp</li>
+         <li><b><a href="images/Project/IMRAN KHAN.webp">IMRAN KHAN.webp</a></b> — IMRAN KHAN.webp</li>
+         <li><b><a href="images/Project/man.webp">man.webp</a></b> — man.webp</li>
       </ul>
       </details>
       <details>
          <summary><b>Qualification</b></summary>
       <ul>
-         <li><b><a href="images/Qualification/2022 Code of Ethics Training & Certification.webp">2022 Code of Ethics Training & Certification.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/2023 Unisys Data Privacy Training.webp">2023 Unisys Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/ACT_Awareness_eLearning_page.webp">ACT_Awareness_eLearning_page.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/ACT_for_Education.webp">ACT_for_Education.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Attendance-1.webp">Attendance-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Attitude to Learning-1.webp">Attitude to Learning-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/B.1 Certificate.webp">B.1 Certificate.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp">BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Behaviour-1.webp">Behaviour-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/CCTV Certificate.webp">CCTV Certificate.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/2022 Code of Ethics Training & Certification.webp">2022 Code of Ethics Training & Certification.webp</a></b> — 2022 Code of Ethics Training & Certification.webp</li>
+         <li><b><a href="images/Qualification/2023 Unisys Data Privacy Training.webp">2023 Unisys Data Privacy Training.webp</a></b> — 2023 Unisys Data Privacy Training.webp</li>
+         <li><b><a href="images/Qualification/ACT_Awareness_eLearning_page.webp">ACT_Awareness_eLearning_page.webp</a></b> — ACT_Awareness_eLearning_page.webp</li>
+         <li><b><a href="images/Qualification/ACT_for_Education.webp">ACT_for_Education.webp</a></b> — ACT_for_Education.webp</li>
+         <li><b><a href="images/Qualification/Attendance-1.webp">Attendance-1.webp</a></b> — Attendance-1.webp</li>
+         <li><b><a href="images/Qualification/Attitude to Learning-1.webp">Attitude to Learning-1.webp</a></b> — Attitude to Learning-1.webp</li>
+         <li><b><a href="images/Qualification/B.1 Certificate.webp">B.1 Certificate.webp</a></b> — B.1 Certificate.webp</li>
+         <li><b><a href="images/Qualification/BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp">BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</a></b> — BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</li>
+         <li><b><a href="images/Qualification/Behaviour-1.webp">Behaviour-1.webp</a></b> — Behaviour-1.webp</li>
+         <li><b><a href="images/Qualification/CCTV Certificate.webp">CCTV Certificate.webp</a></b> — CCTV Certificate.webp</li>
          <li><b><a href="images/Qualification/Certificate.pdf">Certificate.pdf</a></b> — Repository file.</li>
-         <li><b><a href="images/Qualification/Emergency First Aid at Work.webp">Emergency First Aid at Work.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Enrichment-1.webp">Enrichment-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/GCSE English-1.webp">GCSE English-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/GCSE Maths-1.webp">GCSE Maths-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Get Licensed Cyber Security.webp">Get Licensed Cyber Security.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Get Licensed Fire Marshal.webp">Get Licensed Fire Marshal.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Get Licensed Introduction to Risk Assessment.webp">Get Licensed Introduction to Risk Assessment.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Get Licensed Mental Health Awareness.webp">Get Licensed Mental Health Awareness.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Get Licensed Workplace Health and Safety.webp">Get Licensed Workplace Health and Safety.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Hundcuff Certificate.webp">Hundcuff Certificate.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Intellectual Property &Trade Secrets.webp">Intellectual Property &Trade Secrets.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Learner Voice Award 2020-2021-1.webp">Learner Voice Award 2020-2021-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Lockdown Legend-1.webp">Lockdown Legend-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp">OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/OCNLR Level 1 Certificate in Digital Skills-1.webp">OCNLR Level 1 Certificate in Digital Skills-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Pearson BTEC Level 3 Extended Diploma-1.webp">Pearson BTEC Level 3 Extended Diploma-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Professionalism-1.webp">Professionalism-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Security Awareness Foundations.webp">Security Awareness Foundations.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/SIA Certificate.webp">SIA Certificate.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Touch-type Read and Spell Computer Course-1.webp">Touch-type Read and Spell Computer Course-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Unisys 2022 Data Privacy Training.webp">Unisys 2022 Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Unisys 2023 Data Privacy Training.webp">Unisys 2023 Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Volunteering Award 2018-2019-1.webp">Volunteering Award 2018-2019-1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 1.webp">Workplace Health, Safety, Security Training Module 1.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 2.webp">Workplace Health, Safety, Security Training Module 2.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 4.webp">Workplace Health, Safety, Security Training Module 4.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Emergency First Aid at Work.webp">Emergency First Aid at Work.webp</a></b> — Emergency First Aid at Work.webp</li>
+         <li><b><a href="images/Qualification/Enrichment-1.webp">Enrichment-1.webp</a></b> — Enrichment-1.webp</li>
+         <li><b><a href="images/Qualification/GCSE English-1.webp">GCSE English-1.webp</a></b> — GCSE English-1.webp</li>
+         <li><b><a href="images/Qualification/GCSE Maths-1.webp">GCSE Maths-1.webp</a></b> — GCSE Maths-1.webp</li>
+         <li><b><a href="images/Qualification/Get Licensed Cyber Security.webp">Get Licensed Cyber Security.webp</a></b> — Get Licensed Cyber Security.webp</li>
+         <li><b><a href="images/Qualification/Get Licensed Fire Marshal.webp">Get Licensed Fire Marshal.webp</a></b> — Get Licensed Fire Marshal.webp</li>
+         <li><b><a href="images/Qualification/Get Licensed Introduction to Risk Assessment.webp">Get Licensed Introduction to Risk Assessment.webp</a></b> — Get Licensed Introduction to Risk Assessment.webp</li>
+         <li><b><a href="images/Qualification/Get Licensed Mental Health Awareness.webp">Get Licensed Mental Health Awareness.webp</a></b> — Get Licensed Mental Health Awareness.webp</li>
+         <li><b><a href="images/Qualification/Get Licensed Workplace Health and Safety.webp">Get Licensed Workplace Health and Safety.webp</a></b> — Get Licensed Workplace Health and Safety.webp</li>
+         <li><b><a href="images/Qualification/Hundcuff Certificate.webp">Hundcuff Certificate.webp</a></b> — Hundcuff Certificate.webp</li>
+         <li><b><a href="images/Qualification/Intellectual Property &Trade Secrets.webp">Intellectual Property &Trade Secrets.webp</a></b> — Intellectual Property &Trade Secrets.webp</li>
+         <li><b><a href="images/Qualification/Learner Voice Award 2020-2021-1.webp">Learner Voice Award 2020-2021-1.webp</a></b> — Learner Voice Award 2020-2021-1.webp</li>
+         <li><b><a href="images/Qualification/Lockdown Legend-1.webp">Lockdown Legend-1.webp</a></b> — Lockdown Legend-1.webp</li>
+         <li><b><a href="images/Qualification/OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp">OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</a></b> — OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</li>
+         <li><b><a href="images/Qualification/OCNLR Level 1 Certificate in Digital Skills-1.webp">OCNLR Level 1 Certificate in Digital Skills-1.webp</a></b> — OCNLR Level 1 Certificate in Digital Skills-1.webp</li>
+         <li><b><a href="images/Qualification/Pearson BTEC Level 3 Extended Diploma-1.webp">Pearson BTEC Level 3 Extended Diploma-1.webp</a></b> — Pearson BTEC Level 3 Extended Diploma-1.webp</li>
+         <li><b><a href="images/Qualification/Professionalism-1.webp">Professionalism-1.webp</a></b> — Professionalism-1.webp</li>
+         <li><b><a href="images/Qualification/Security Awareness Foundations.webp">Security Awareness Foundations.webp</a></b> — Security Awareness Foundations.webp</li>
+         <li><b><a href="images/Qualification/SIA Certificate.webp">SIA Certificate.webp</a></b> — SIA Certificate.webp</li>
+         <li><b><a href="images/Qualification/Touch-type Read and Spell Computer Course-1.webp">Touch-type Read and Spell Computer Course-1.webp</a></b> — Touch-type Read and Spell Computer Course-1.webp</li>
+         <li><b><a href="images/Qualification/Unisys 2022 Data Privacy Training.webp">Unisys 2022 Data Privacy Training.webp</a></b> — Unisys 2022 Data Privacy Training.webp</li>
+         <li><b><a href="images/Qualification/Unisys 2023 Data Privacy Training.webp">Unisys 2023 Data Privacy Training.webp</a></b> — Unisys 2023 Data Privacy Training.webp</li>
+         <li><b><a href="images/Qualification/Volunteering Award 2018-2019-1.webp">Volunteering Award 2018-2019-1.webp</a></b> — Volunteering Award 2018-2019-1.webp</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 1.webp">Workplace Health, Safety, Security Training Module 1.webp</a></b> — Workplace Health, Safety, Security Training Module 1.webp</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 2.webp">Workplace Health, Safety, Security Training Module 2.webp</a></b> — Workplace Health, Safety, Security Training Module 2.webp</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 4.webp">Workplace Health, Safety, Security Training Module 4.webp</a></b> — Workplace Health, Safety, Security Training Module 4.webp</li>
       </ul>
       </details>
       <details>
          <summary><b>Website</b></summary>
       <ul>
-         <li><b><a href="images/Website/IMG_1374.webp">IMG_1374.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Website/logo.webp">logo.webp</a></b> — Static asset (image or font).</li>
-         <li><b><a href="images/Website/Maintenance.webp">Maintenance.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Website/IMG_1374.webp">IMG_1374.webp</a></b> — IMG_1374.webp</li>
+         <li><b><a href="images/Website/logo.webp">logo.webp</a></b> — logo.webp</li>
+         <li><b><a href="images/Website/Maintenance.webp">Maintenance.webp</a></b> — Maintenance.webp</li>
       </ul>
       </details>
    </details>
@@ -323,8 +323,8 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>Js</b></summary>
       <ul>
-         <li><b><a href="Js/app.js">app.js</a></b> — JavaScript/TypeScript module; functions: handleClick, activeProject.</li>
-         <li><b><a href="Js/mixitup.min.js">mixitup.min.js</a></b> — JavaScript/TypeScript module.</li>
+         <li><b><a href="Js/app.js">app.js</a></b> — JavaScript/TypeScript module; classes: from, to; functions: handleClick, activeProject.</li>
+         <li><b><a href="Js/mixitup.min.js">mixitup.min.js</a></b> — JavaScript/TypeScript module; functions: must.</li>
       </ul>
    </details>
 
@@ -339,7 +339,7 @@ This project provides a comprehensive, responsive portfolio website architecture
       <details>
          <summary><b>Inventroy Application Pics</b></summary>
       <ul>
-         <li><b><a href="Projects/Inventroy Application Pics/Richard Jameson.jpeg">Richard Jameson.jpeg</a></b> — Static asset (image or font).</li>
+         <li><b><a href="Projects/Inventroy Application Pics/Richard Jameson.jpeg">Richard Jameson.jpeg</a></b> — Richard Jameson.jpeg</li>
       </ul>
       </details>
       <details>

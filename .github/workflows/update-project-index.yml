@@ -32,11 +32,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Rebuild Project Index (AI descriptions) and update README
+      - name: Write indexer script to file
+        shell: bash
         run: |
-          node - <<'NODE'
-          const fs = require('fs');
-          const path = require('path');
+          set -euo pipefail
+          mkdir -p .github/tmp
+          cat > .github/tmp/update-index.mjs <<'NODE'
+          import fs from 'fs';
+          import path from 'path';
+          import { setTimeout as delay } from 'timers/promises';
 
           const README_PATH = process.env.README_PATH || 'README.md';
           const INDEX_HEADING = process.env.INDEX_HEADING || '### 📑 Project Index';
@@ -53,9 +57,11 @@ jobs:
             '.git','node_modules','.DS_Store','.idea','.vscode','.env','.venv',
             '.next','dist','build','coverage','.turbo','.cache'
           ]);
-          const MAX_SAMPLE_BYTES = 8192; // read first 8KB per file for AI context
-          const AI_TIMEOUT_MS = 25000;
 
+          const MAX_SAMPLE_BYTES = 65536; // 64KB per file for better summaries
+          const AI_TIMEOUT_MS = 45000;
+
+          // ---------- HELPERS ----------
           function listDir(abs) {
             return fs.readdirSync(abs, { withFileTypes: true })
               .filter(e => !IGNORE.has(e.name))
@@ -65,71 +71,77 @@ jobs:
               });
           }
 
-          function readSample(fileAbs) {
+          function safeRead(fileAbs, maxBytes = MAX_SAMPLE_BYTES) {
             try {
               const b = fs.readFileSync(fileAbs);
-              return b.toString('utf8', 0, Math.min(b.length, MAX_SAMPLE_BYTES));
-            } catch { return ''; }
-          }
-
-          // ---- Heuristic fallback (used only if AI is unavailable/fails) ----
-          function fallbackDescribe(rel, textSample = '') {
-            const n = rel.toLowerCase();
-            if (n.endsWith('/readme.md') || n === 'readme.md') return 'Project documentation, overview and setup instructions.';
-            if (n.endsWith('package.json')) return 'Npm manifest (dependencies & scripts).';
-            if (n.endsWith('package-lock.json') || n.endsWith('pnpm-lock.yaml') || n.endsWith('yarn.lock')) return 'Lockfile with exact dependency versions.';
-            if (n.endsWith('.pem')) return 'Certificate/PEM material (local TLS/testing).';
-            if (n.endsWith('websocketserver.js')) return 'WebSocket server that manages connections, broadcasts and hooks.';
-            if (n.endsWith('htmlserver.js')) return 'Serves static frontend assets for the chat UI.';
-            if (n.endsWith('/index.js') || n === 'index.js') return 'Main server entrypoint that wires HTTP and WebSocket servers.';
-            if (n.includes('/migrations/') && n.endsWith('.sql')) {
-              if (/addroomname/i.test(n)) return 'Adds room name column/table changes.';
-              if (/addquestions/i.test(n)) return 'Adds question support schema.';
-              return 'Database migration script.';
-            }
-            if (n.includes('/test/')) {
-              if (n.endsWith('.sql')) return 'SQL for testing DB schemas and sample data.';
-              if (n.endsWith('.js')) return 'Test helpers and scripts.';
-              return 'Test artifact.';
-            }
-            if (n.includes('/html/')) {
-              if (n.endsWith('.html')) {
-                if (/chatroom\.html$/i.test(n)) return 'Main chatroom UI page.';
-                if (/index\.html$/i.test(n)) return 'Login/landing page for users.';
-                return 'HTML page.';
+              const head = b.subarray(0, Math.min(2048, b.length));
+              let nonText = 0;
+              for (let i = 0; i < head.length; i++) {
+                const byte = head[i];
+                if (byte === 0) { nonText = 9999; break; }
+                if (byte < 9 || (byte > 13 && byte < 32)) nonText++;
               }
-              if (n.endsWith('.css')) return 'Stylesheet for the HTML UI.';
-              if (/clientside\.js$/i.test(n)) return 'Client-side JS handling WebSocket events and UI updates.';
-              if (/messageevents\.js$/i.test(n)) return 'Structured WebSocket message/event types.';
+              const isBinary = nonText > 32;
+              if (isBinary) return { text: '(binary or non-text content omitted)', isBinary: true, size: b.length };
+              return { text: b.toString('utf8', 0, Math.min(b.length, maxBytes)), isBinary: false, size: b.length };
+            } catch {
+              return { text: '', isBinary: false, size: 0 };
             }
-            if (n.includes('example chatroom html & styling')) {
-              if (n.endsWith('.html')) return 'Example chatroom page demonstrating layout and client-side integration.';
-              if (n.endsWith('.css')) return 'Example stylesheet for the sample chatroom.';
-            }
-            if (n.endsWith('.js')) {
-              if (/socket|websocket|ws/i.test(textSample)) return 'WebSocket-related JavaScript.';
-              if (/express|http\.createServer/i.test(textSample)) return 'Server-side JavaScript.';
-              return 'JavaScript file.';
-            }
-            if (n.endsWith('.html')) return 'HTML page.';
-            if (n.endsWith('.css')) return 'Stylesheet.';
-            if (n.endsWith('.sql')) return 'SQL script.';
-            return 'File.';
           }
 
-          // ---- AI description generator ----
+          function quickSignals(sample, rel) {
+            const out = {};
+            out.functions = Array.from(sample.matchAll(/\bfunction\s+([A-Za-z0-9_]+)/g)).map(m=>m[1]);
+            out.exports = Array.from(sample.matchAll(/\bexport\s+(?:default\s+)?(?:function|class|const|let|var)?\s*([A-Za-z0-9_]+)/g)).map(m=>m[1]);
+            out.imports = Array.from(sample.matchAll(/\bfrom\s+['"]([^'"]+)['"]/g)).map(m=>m[1]).slice(0,6);
+            out.routes = Array.from(sample.matchAll(/\b(app|router)\.(get|post|put|delete|patch)\(['"`]([^'"`]+)['"`]\)/g)).map(m=>`${m[2].toUpperCase()} ${m[3]}`);
+            out.react = /from\s+['"]react['"]/.test(sample) || /tsx?$/i.test(rel);
+            out.next = /from\s+['"]next(\/.*)?['"]/.test(sample) || /(?:^|\/)(app|pages)\//.test(rel);
+            out.tailwind = /class(Name)?=/.test(sample) && /(bg-|text-|flex|grid|rounded|shadow)/.test(sample);
+            return out;
+          }
+
+          function fallbackDescribe(rel, sample = '') {
+            const n = rel.toLowerCase();
+            if (n.endsWith('/readme.md') || n === 'readme.md') return 'Project documentation with overview, setup and usage.';
+            if (n.endsWith('package.json')) return 'Node package manifest defining scripts, dependencies and project metadata.';
+            if (/pnpm-lock\.yaml$|yarn\.lock$|package-lock\.json$/.test(n)) return 'Dependency lockfile pinning exact versions for reproducible installs.';
+            if (/\.(png|jpg|jpeg|gif|svg|ico|webp|ttf|otf|woff2?)$/i.test(n)) return 'Static asset (image or font).';
+            if (/\.(css|scss|sass)$/i.test(n)) return 'Stylesheet defining layout and utility classes.';
+            if (/\.html$/i.test(n)) return 'Static HTML markup for a page or template.';
+            if (/\.(ts|tsx|js|jsx)$/i.test(n)) {
+              const sig = quickSignals(sample, rel);
+              const bits = [];
+              if (sig.next) bits.push('Next.js module');
+              else if (sig.react) bits.push('React component/module');
+              else bits.push('JavaScript/TypeScript module');
+              if (sig.routes?.length) bits.push(`routes: ${sig.routes.slice(0,3).join(', ')}${sig.routes.length>3?'…':''}`);
+              if (sig.exports?.length) bits.push(`exports: ${sig.exports.slice(0,4).join(', ')}${sig.exports.length>4?'…':''}`);
+              if (sig.functions?.length && !sig.exports.length) bits.push(`functions: ${sig.functions.slice(0,4).join(', ')}${sig.functions.length>4?'…':''}`);
+              if (sig.tailwind) bits.push('uses Tailwind utilities');
+              if (sig.imports?.length) bits.push(`imports ${sig.imports.slice(0,3).join(', ')}${sig.imports.length>3?'…':''}`);
+              return bits.join('; ') + '.';
+            }
+            if (/\.(md|mdx)$/i.test(n)) return 'Markdown content for documentation or pages.';
+            if (/\.(json)$/i.test(n)) return 'JSON data or configuration.';
+            if (/\.(yml|yaml)$/i.test(n)) return 'YAML configuration (CI/tooling).';
+            return 'Repository file.';
+          }
+
           async function aiDescribeFile(relPath, sample) {
             if (!OPENAI_API_KEY) return fallbackDescribe(relPath, sample);
 
             const controller = new AbortController();
-            const t = setTimeout(() => controller.abort(), AI_TIMEOUT_MS);
+            const timer = setTimeout(() => controller.abort(), AI_TIMEOUT_MS);
 
-            const prompt = [
-              { role: "system", content:
-                "You are a concise code indexer. For a given repository file path and a short content sample, output a single, crisp one-line description (max 20 words). No file type prefixes, no markdown, no quotes. Start directly with the description. Avoid repeating the filename. Keep it specific and helpful." },
-              { role: "user", content:
-                `Path: ${relPath}\n---\nSample (truncated):\n${sample || '(empty or binary)'}\n---\nOne-line description:` }
-            ];
+            // Keep prompt labels simple (avoid YAML-like "key: value" to prevent linter confusion)
+            const sys = "You are a precise repository indexer. Produce a compact, rich summary for ONE file. Write 3–5 crisp sentences (60–140 words). Explain WHAT the file is for, HOW it works, and WHAT code it contains. Mention main exports/functions/classes, routes/components, config keys, or frameworks. If binary/empty, say so and infer role if possible. No markdown headers, no filename repetition, no disclaimers. Output must be a SINGLE LINE (replace newlines with spaces). End with a period.";
+            const usr =
+              "PATH >> " + relPath + "\n" +
+              "CONTEXT >> personal portfolio, likely Next.js/React/Tailwind.\n" +
+              "SAMPLE(" + (sample?.length || 0) + ") >>\n" +
+              (sample || '(empty/binary)') + "\n" +
+              "RETURN >> one single-line summary (3–5 sentences).";
 
             try {
               const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -140,14 +152,17 @@ jobs:
                 },
                 body: JSON.stringify({
                   model: AI_MODEL,
-                  messages: prompt,
-                  temperature: 0.2,
-                  max_tokens: 40
+                  messages: [
+                    { role: 'system', content: sys },
+                    { role: 'user', content: usr }
+                  ],
+                  temperature: 0.15,
+                  max_tokens: 240
                 }),
                 signal: controller.signal
               });
 
-              clearTimeout(t);
+              clearTimeout(timer);
 
               if (!res.ok) {
                 const errTxt = await res.text().catch(()=>String(res.status));
@@ -155,12 +170,11 @@ jobs:
                 return fallbackDescribe(relPath, sample);
               }
               const data = await res.json();
-              const text = data?.choices?.[0]?.message?.content?.trim() || '';
-              if (!text) return fallbackDescribe(relPath, sample);
+              const text = data?.choices?.[0]?.message?.content ?? '';
+              if (!text.trim()) return fallbackDescribe(relPath, sample);
 
-              // Normalize: ensure sentence end, keep it as one line
               let line = text.replace(/\s+/g, ' ').trim();
-              if (line.length > 200) line = line.slice(0, 200).trim();
+              if (line.length > 600) line = line.slice(0, 600).trimEnd() + '…';
               if (!/[.!?]$/.test(line)) line += '.';
               return line;
             } catch (e) {
@@ -169,7 +183,6 @@ jobs:
             }
           }
 
-          // ---- HTML builders (async to await AI) ----
           async function buildDetailsForDir(rootAbs, relDir) {
             const abs = path.join(rootAbs, relDir);
             const entries = listDir(abs);
@@ -179,12 +192,12 @@ jobs:
             let html = '';
             if (files.length) {
               html += '      <ul>\n';
-              // Sequential to be kind to rate limits; you can parallelize if needed.
               for (const f of files) {
                 const relPath = path.posix.join(relDir, f.name).replace(/\\/g, '/');
-                const sample = readSample(path.join(abs, f.name));
+                const { text: sample } = safeRead(path.join(abs, f.name));
                 const desc = await aiDescribeFile(relPath, sample);
-                html += `         <li><b><a href="${relPath}">${f.name}</a></b> — ${desc}</li>\n`;
+                const href = path.posix.join('.', relPath);
+                html += `         <li><b><a href="${href}">${f.name}</a></b> — ${desc}</li>\n`;
               }
               html += '      </ul>\n';
             }
@@ -217,9 +230,11 @@ jobs:
               out += '      <summary><b>__root__</b></summary>\n';
               out += '      <ul>\n';
               for (const f of rootFiles) {
-                const sample = readSample(path.join(process.cwd(), f.name));
+                const { text: sample } = safeRead(path.join(process.cwd(), f.name));
                 const desc = await aiDescribeFile(f.name, sample);
-                out += `         <li><b><a href="./${f.name}">${f.name}</a></b> — ${desc}</li>\n`;
+                const href = `./${f.name}`;
+                const htmlLine = `         <li><b><a href="${href}">${f.name}</a></b> — ${desc}</li>\n`;
+                out += htmlLine;
               }
               out += '      </ul>\n';
               out += '   </details>\n';
@@ -237,12 +252,11 @@ jobs:
             return out;
           }
 
-          // Replace from heading to next horizontal rule '---'
           function replaceRangeByHR(readme, newSection) {
             const startIdx = readme.indexOf(INDEX_HEADING);
             if (startIdx === -1) {
-              console.error(`❌ Heading "${INDEX_HEADING}" not found in README.`);
-              process.exit(1);
+              const sep = readme.endsWith('\n') ? '' : '\n';
+              return readme + sep + '\n---\n' + newSection + '\n';
             }
             const afterStart = startIdx + INDEX_HEADING.length;
             const after = readme.slice(afterStart);
@@ -265,14 +279,21 @@ jobs:
             }
 
             fs.writeFileSync(README_PATH, updated, 'utf8');
-            console.log('✅ Project Index updated in README (AI descriptions).');
+            console.log('✅ Project Index updated in README (rich AI summaries).');
           })().catch(e => { console.error('❌ Failed:', e); process.exit(1); });
           NODE
 
+      - name: Run indexer
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/tmp/update-index.mjs
+
       - name: Commit, rebase on remote, and push
         env:
-          PAT_OR_TOKEN: ${{ secrets.PERSONAL_TOKEN != '' && secrets.PERSONAL_TOKEN || secrets.GITHUB_TOKEN }}
+          PAT_OR_TOKEN: ${{ secrets.PERSONAL_TOKEN || secrets.GITHUB_TOKEN }}
           README_PATH: README.md
+        shell: bash
         run: |
           set -euo pipefail
 
@@ -281,33 +302,27 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Use token for both fetch/pull and push
           git remote set-url origin "https://x-access-token:${PAT_OR_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-          # Exit early if README didn't change
           if git diff --quiet -- "${README_PATH}"; then
             echo "No changes."
             exit 0
           fi
 
-          # Commit local changes
           git add "${README_PATH}"
-          git commit -m "docs: auto-update 📑 Project Index with AI one-liners" || true
+          git commit -m "docs: auto-update 📑 Project Index with rich AI summaries" || true
 
-          # Rebase on latest remote to avoid non-fast-forward pushes
           git fetch origin "${BRANCH}"
           git pull --rebase --autostash origin "${BRANCH}" || true
 
-          # If rebase touched README, ensure it's staged/committed
           git add "${README_PATH}" || true
-          git commit --no-edit || true
+          git diff --cached --quiet || git commit --no-edit || true
 
-          # Try push; if rejected due to race, sync and retry once
           if ! git push origin "HEAD:${BRANCH}"; then
             echo "Push rejected, syncing once and retrying…"
             git fetch origin "${BRANCH}"
             git pull --rebase --autostash origin "${BRANCH}" || true
             git add "${README_PATH}" || true
-            git commit --no-edit || true
+            git diff --cached --quiet || git commit --no-edit || true
             git push origin "HEAD:${BRANCH}"
           fi

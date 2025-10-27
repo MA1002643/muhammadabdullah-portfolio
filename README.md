@@ -212,27 +212,33 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>__root__</b></summary>
       <ul>
-         <li><b><a href="./background2.webp">background2.webp</a></b> — File.</li>
-         <li><b><a href="./htaccess">htaccess</a></b> — File.</li>
-         <li><b><a href="./index.html">index.html</a></b> — HTML page.</li>
-         <li><b><a href="./LICENSE">LICENSE</a></b> — File.</li>
-         <li><b><a href="./Muhammad Abdullah CV.pdf">Muhammad Abdullah CV.pdf</a></b> — File.</li>
-         <li><b><a href="./package-lock.json">package-lock.json</a></b> — Lockfile with exact dependency versions.</li>
-         <li><b><a href="./package.json">package.json</a></b> — Npm manifest (dependencies & scripts).</li>
-         <li><b><a href="./README.md">README.md</a></b> — Project documentation, overview and setup instructions.</li>
+         <li><b><a href="./background2.webp">background2.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="./htaccess">htaccess</a></b> — Repository file.</li>
+         <li><b><a href="./index.html">index.html</a></b> — Static HTML markup for a page or template.</li>
+         <li><b><a href="./LICENSE">LICENSE</a></b> — Repository file.</li>
+         <li><b><a href="./Muhammad Abdullah CV.pdf">Muhammad Abdullah CV.pdf</a></b> — Repository file.</li>
+         <li><b><a href="./package-lock.json">package-lock.json</a></b> — Dependency lockfile pinning exact versions for reproducible installs.</li>
+         <li><b><a href="./package.json">package.json</a></b> — Node package manifest defining scripts, dependencies and project metadata.</li>
+         <li><b><a href="./README.md">README.md</a></b> — Project documentation with overview, setup and usage.</li>
       </ul>
    </details>
    <details>
       <summary><b>.github</b></summary>
       <ul>
-         <li><b><a href=".github/CODEOWNERS">CODEOWNERS</a></b> — File.</li>
+         <li><b><a href=".github/CODEOWNERS">CODEOWNERS</a></b> — Repository file.</li>
       </ul>
+      <details>
+         <summary><b>tmp</b></summary>
+      <ul>
+         <li><b><a href=".github/tmp/update-index.mjs">update-index.mjs</a></b> — Repository file.</li>
+      </ul>
+      </details>
       <details>
          <summary><b>workflows</b></summary>
       <ul>
-         <li><b><a href=".github/workflows/update-project-index.yml">update-project-index.yml</a></b> — File.</li>
-         <li><b><a href=".github/workflows/update-project-structure.yml">update-project-structure.yml</a></b> — File.</li>
-         <li><b><a href=".github/workflows/update-tech-badges-single-repo.yml">update-tech-badges-single-repo.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-project-index.yml">update-project-index.yml</a></b> — YAML configuration (CI/tooling).</li>
+         <li><b><a href=".github/workflows/update-project-structure.yml">update-project-structure.yml</a></b> — YAML configuration (CI/tooling).</li>
+         <li><b><a href=".github/workflows/update-tech-badges-single-repo.yml">update-tech-badges-single-repo.yml</a></b> — YAML configuration (CI/tooling).</li>
       </ul>
       </details>
    </details>
@@ -240,15 +246,15 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>css</b></summary>
       <ul>
-         <li><b><a href="css/about.css">about.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/contactme.css">contactme.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/footer.css">footer.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/home.css">home.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/navbar.css">navbar.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/owl.carousel.min.css">owl.carousel.min.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/projects.css">projects.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/qualifications.css">qualifications.css</a></b> — Stylesheet.</li>
-         <li><b><a href="css/scrollbar.css">scrollbar.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/about.css">about.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/contactme.css">contactme.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/footer.css">footer.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/home.css">home.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/navbar.css">navbar.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/owl.carousel.min.css">owl.carousel.min.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/projects.css">projects.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/qualifications.css">qualifications.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="css/scrollbar.css">scrollbar.css</a></b> — Stylesheet defining layout and utility classes.</li>
       </ul>
    </details>
 
@@ -257,59 +263,59 @@ This project provides a comprehensive, responsive portfolio website architecture
       <details>
          <summary><b>Project</b></summary>
       <ul>
-         <li><b><a href="images/Project/Chatroom.webp">Chatroom.webp</a></b> — File.</li>
-         <li><b><a href="images/Project/IMRAN KHAN.webp">IMRAN KHAN.webp</a></b> — File.</li>
-         <li><b><a href="images/Project/man.webp">man.webp</a></b> — File.</li>
+         <li><b><a href="images/Project/Chatroom.webp">Chatroom.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Project/IMRAN KHAN.webp">IMRAN KHAN.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Project/man.webp">man.webp</a></b> — Static asset (image or font).</li>
       </ul>
       </details>
       <details>
          <summary><b>Qualification</b></summary>
       <ul>
-         <li><b><a href="images/Qualification/2022 Code of Ethics Training & Certification.webp">2022 Code of Ethics Training & Certification.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/2023 Unisys Data Privacy Training.webp">2023 Unisys Data Privacy Training.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/ACT_Awareness_eLearning_page.webp">ACT_Awareness_eLearning_page.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/ACT_for_Education.webp">ACT_for_Education.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Attendance-1.webp">Attendance-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Attitude to Learning-1.webp">Attitude to Learning-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/B.1 Certificate.webp">B.1 Certificate.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp">BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Behaviour-1.webp">Behaviour-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/CCTV Certificate.webp">CCTV Certificate.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Certificate.pdf">Certificate.pdf</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Emergency First Aid at Work.webp">Emergency First Aid at Work.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Enrichment-1.webp">Enrichment-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/GCSE English-1.webp">GCSE English-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/GCSE Maths-1.webp">GCSE Maths-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Get Licensed Cyber Security.webp">Get Licensed Cyber Security.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Get Licensed Fire Marshal.webp">Get Licensed Fire Marshal.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Get Licensed Introduction to Risk Assessment.webp">Get Licensed Introduction to Risk Assessment.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Get Licensed Mental Health Awareness.webp">Get Licensed Mental Health Awareness.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Get Licensed Workplace Health and Safety.webp">Get Licensed Workplace Health and Safety.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Hundcuff Certificate.webp">Hundcuff Certificate.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Intellectual Property &Trade Secrets.webp">Intellectual Property &Trade Secrets.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Learner Voice Award 2020-2021-1.webp">Learner Voice Award 2020-2021-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Lockdown Legend-1.webp">Lockdown Legend-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp">OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/OCNLR Level 1 Certificate in Digital Skills-1.webp">OCNLR Level 1 Certificate in Digital Skills-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Pearson BTEC Level 3 Extended Diploma-1.webp">Pearson BTEC Level 3 Extended Diploma-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Professionalism-1.webp">Professionalism-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Security Awareness Foundations.webp">Security Awareness Foundations.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/SIA Certificate.webp">SIA Certificate.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Touch-type Read and Spell Computer Course-1.webp">Touch-type Read and Spell Computer Course-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Unisys 2022 Data Privacy Training.webp">Unisys 2022 Data Privacy Training.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Unisys 2023 Data Privacy Training.webp">Unisys 2023 Data Privacy Training.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Volunteering Award 2018-2019-1.webp">Volunteering Award 2018-2019-1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 1.webp">Workplace Health, Safety, Security Training Module 1.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 2.webp">Workplace Health, Safety, Security Training Module 2.webp</a></b> — File.</li>
-         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 4.webp">Workplace Health, Safety, Security Training Module 4.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/2022 Code of Ethics Training & Certification.webp">2022 Code of Ethics Training & Certification.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/2023 Unisys Data Privacy Training.webp">2023 Unisys Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/ACT_Awareness_eLearning_page.webp">ACT_Awareness_eLearning_page.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/ACT_for_Education.webp">ACT_for_Education.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Attendance-1.webp">Attendance-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Attitude to Learning-1.webp">Attitude to Learning-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/B.1 Certificate.webp">B.1 Certificate.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp">BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Behaviour-1.webp">Behaviour-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/CCTV Certificate.webp">CCTV Certificate.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Certificate.pdf">Certificate.pdf</a></b> — Repository file.</li>
+         <li><b><a href="images/Qualification/Emergency First Aid at Work.webp">Emergency First Aid at Work.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Enrichment-1.webp">Enrichment-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/GCSE English-1.webp">GCSE English-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/GCSE Maths-1.webp">GCSE Maths-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Get Licensed Cyber Security.webp">Get Licensed Cyber Security.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Get Licensed Fire Marshal.webp">Get Licensed Fire Marshal.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Get Licensed Introduction to Risk Assessment.webp">Get Licensed Introduction to Risk Assessment.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Get Licensed Mental Health Awareness.webp">Get Licensed Mental Health Awareness.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Get Licensed Workplace Health and Safety.webp">Get Licensed Workplace Health and Safety.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Hundcuff Certificate.webp">Hundcuff Certificate.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Intellectual Property &Trade Secrets.webp">Intellectual Property &Trade Secrets.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Learner Voice Award 2020-2021-1.webp">Learner Voice Award 2020-2021-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Lockdown Legend-1.webp">Lockdown Legend-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp">OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/OCNLR Level 1 Certificate in Digital Skills-1.webp">OCNLR Level 1 Certificate in Digital Skills-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Pearson BTEC Level 3 Extended Diploma-1.webp">Pearson BTEC Level 3 Extended Diploma-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Professionalism-1.webp">Professionalism-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Security Awareness Foundations.webp">Security Awareness Foundations.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/SIA Certificate.webp">SIA Certificate.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Touch-type Read and Spell Computer Course-1.webp">Touch-type Read and Spell Computer Course-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Unisys 2022 Data Privacy Training.webp">Unisys 2022 Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Unisys 2023 Data Privacy Training.webp">Unisys 2023 Data Privacy Training.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Volunteering Award 2018-2019-1.webp">Volunteering Award 2018-2019-1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 1.webp">Workplace Health, Safety, Security Training Module 1.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 2.webp">Workplace Health, Safety, Security Training Module 2.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 4.webp">Workplace Health, Safety, Security Training Module 4.webp</a></b> — Static asset (image or font).</li>
       </ul>
       </details>
       <details>
          <summary><b>Website</b></summary>
       <ul>
-         <li><b><a href="images/Website/IMG_1374.webp">IMG_1374.webp</a></b> — File.</li>
-         <li><b><a href="images/Website/logo.webp">logo.webp</a></b> — File.</li>
-         <li><b><a href="images/Website/Maintenance.webp">Maintenance.webp</a></b> — File.</li>
+         <li><b><a href="images/Website/IMG_1374.webp">IMG_1374.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Website/logo.webp">logo.webp</a></b> — Static asset (image or font).</li>
+         <li><b><a href="images/Website/Maintenance.webp">Maintenance.webp</a></b> — Static asset (image or font).</li>
       </ul>
       </details>
    </details>
@@ -317,38 +323,38 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>Js</b></summary>
       <ul>
-         <li><b><a href="Js/app.js">app.js</a></b> — WebSocket-related JavaScript.</li>
-         <li><b><a href="Js/mixitup.min.js">mixitup.min.js</a></b> — JavaScript file.</li>
+         <li><b><a href="Js/app.js">app.js</a></b> — JavaScript/TypeScript module; functions: handleClick, activeProject.</li>
+         <li><b><a href="Js/mixitup.min.js">mixitup.min.js</a></b> — JavaScript/TypeScript module.</li>
       </ul>
    </details>
 
    <details>
       <summary><b>Projects</b></summary>
       <ul>
-         <li><b><a href="Projects/Project1.html">Project1.html</a></b> — HTML page.</li>
-         <li><b><a href="Projects/Project2.html">Project2.html</a></b> — HTML page.</li>
-         <li><b><a href="Projects/Project3.html">Project3.html</a></b> — HTML page.</li>
-         <li><b><a href="Projects/Project4.html">Project4.html</a></b> — HTML page.</li>
+         <li><b><a href="Projects/Project1.html">Project1.html</a></b> — Static HTML markup for a page or template.</li>
+         <li><b><a href="Projects/Project2.html">Project2.html</a></b> — Static HTML markup for a page or template.</li>
+         <li><b><a href="Projects/Project3.html">Project3.html</a></b> — Static HTML markup for a page or template.</li>
+         <li><b><a href="Projects/Project4.html">Project4.html</a></b> — Static HTML markup for a page or template.</li>
       </ul>
       <details>
          <summary><b>Inventroy Application Pics</b></summary>
       <ul>
-         <li><b><a href="Projects/Inventroy Application Pics/Richard Jameson.jpeg">Richard Jameson.jpeg</a></b> — File.</li>
+         <li><b><a href="Projects/Inventroy Application Pics/Richard Jameson.jpeg">Richard Jameson.jpeg</a></b> — Static asset (image or font).</li>
       </ul>
       </details>
       <details>
          <summary><b>Js</b></summary>
       <ul>
-         <li><b><a href="Projects/Js/Project.js">Project.js</a></b> — JavaScript file.</li>
+         <li><b><a href="Projects/Js/Project.js">Project.js</a></b> — JavaScript/TypeScript module.</li>
       </ul>
       </details>
       <details>
          <summary><b>Projects CSS</b></summary>
       <ul>
-         <li><b><a href="Projects/Projects CSS/Project1.css">Project1.css</a></b> — Stylesheet.</li>
-         <li><b><a href="Projects/Projects CSS/Project2.css">Project2.css</a></b> — Stylesheet.</li>
-         <li><b><a href="Projects/Projects CSS/Project3.css">Project3.css</a></b> — Stylesheet.</li>
-         <li><b><a href="Projects/Projects CSS/Project4.css">Project4.css</a></b> — Stylesheet.</li>
+         <li><b><a href="Projects/Projects CSS/Project1.css">Project1.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="Projects/Projects CSS/Project2.css">Project2.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="Projects/Projects CSS/Project3.css">Project3.css</a></b> — Stylesheet defining layout and utility classes.</li>
+         <li><b><a href="Projects/Projects CSS/Project4.css">Project4.css</a></b> — Stylesheet defining layout and utility classes.</li>
       </ul>
       </details>
    </details>
@@ -356,9 +362,9 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>Videos</b></summary>
       <ul>
-         <li><b><a href="Videos/First Year Project.mp4">First Year Project.mp4</a></b> — File.</li>
-         <li><b><a href="Videos/Imran Khan.mp4">Imran Khan.mp4</a></b> — File.</li>
-         <li><b><a href="Videos/Personal portfolio.mp4">Personal portfolio.mp4</a></b> — File.</li>
+         <li><b><a href="Videos/First Year Project.mp4">First Year Project.mp4</a></b> — Repository file.</li>
+         <li><b><a href="Videos/Imran Khan.mp4">Imran Khan.mp4</a></b> — Repository file.</li>
+         <li><b><a href="Videos/Personal portfolio.mp4">Personal portfolio.mp4</a></b> — Repository file.</li>
       </ul>
    </details>
 

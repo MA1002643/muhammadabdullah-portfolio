@@ -368,7 +368,6 @@ This project provides a comprehensive, responsive portfolio website architecture
       </ul>
    </details>
 
-
 </details>
 
 ---
@@ -406,11 +405,11 @@ Build muhammadabdullah-portfolio from the source and install dependencies:
 
 3. **Install the dependencies:**
 
-**Using [npm](https://www.npmjs.com/):**
+   **Using [npm](https://www.npmjs.com/):**
 
-```sh
-❯ npm install
-```
+   ```sh
+   ❯ npm install
+   ```
 
 <a id="usage"></a>
 

@@ -106,46 +106,92 @@ This project provides a comprehensive, responsive portfolio website architecture
 
 ```sh
 └── muhammadabdullah-portfolio/
-    ├── Js
-    │   ├── app.js
-    │   └── mixitup.min.js
-    ├── Muhammad Abdullah CV.pdf
-    ├── Projects
-    │   ├── .DS_Store
-    │   ├── Inventroy Application Pics
-    │   ├── Js
-    │   ├── Project1.html
-    │   ├── Project2.html
-    │   ├── Project3.html
-    │   ├── Project4.html
-    │   └── Projects CSS
-    ├── README.md
-    ├── Videos
-    │   ├── .DS_Store
-    │   ├── First Year Project.mp4
-    │   ├── Imran Khan.mp4
-    │   └── Personal portfolio.mp4
-    ├── background2.webp
-    ├── css
-    │   ├── .DS_Store
-    │   ├── about.css
-    │   ├── contactme.css
-    │   ├── footer.css
-    │   ├── home.css
-    │   ├── navbar.css
-    │   ├── owl.carousel.min.css
-    │   ├── projects.css
-    │   ├── qualifications.css
-    │   └── scrollbar.css
-    ├── htaccess
-    ├── images
-    │   ├── .DS_Store
-    │   ├── Project
-    │   ├── Qualification
-    │   └── Website
-    ├── index.html
-    ├── package-lock.json
-    └── package.json
+├── css/
+│   ├── about.css
+│   ├── contactme.css
+│   ├── footer.css
+│   ├── home.css
+│   ├── navbar.css
+│   ├── owl.carousel.min.css
+│   ├── projects.css
+│   ├── qualifications.css
+│   └── scrollbar.css
+├── images/
+│   ├── Project/
+│   │   ├── Chatroom.webp
+│   │   ├── IMRAN KHAN.webp
+│   │   └── man.webp
+│   ├── Qualification/
+│   │   ├── 2022 Code of Ethics Training & Certification.webp
+│   │   ├── 2023 Unisys Data Privacy Training.webp
+│   │   ├── ACT_Awareness_eLearning_page.webp
+│   │   ├── ACT_for_Education.webp
+│   │   ├── Attendance-1.webp
+│   │   ├── Attitude to Learning-1.webp
+│   │   ├── B.1 Certificate.webp
+│   │   ├── BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp
+│   │   ├── Behaviour-1.webp
+│   │   ├── CCTV Certificate.webp
+│   │   ├── Certificate.pdf
+│   │   ├── Emergency First Aid at Work.webp
+│   │   ├── Enrichment-1.webp
+│   │   ├── GCSE English-1.webp
+│   │   ├── GCSE Maths-1.webp
+│   │   ├── Get Licensed Cyber Security.webp
+│   │   ├── Get Licensed Fire Marshal.webp
+│   │   ├── Get Licensed Introduction to Risk Assessment.webp
+│   │   ├── Get Licensed Mental Health Awareness.webp
+│   │   ├── Get Licensed Workplace Health and Safety.webp
+│   │   ├── Hundcuff Certificate.webp
+│   │   ├── Intellectual Property &Trade Secrets.webp
+│   │   ├── Learner Voice Award 2020-2021-1.webp
+│   │   ├── Lockdown Legend-1.webp
+│   │   ├── OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp
+│   │   ├── OCNLR Level 1 Certificate in Digital Skills-1.webp
+│   │   ├── Pearson BTEC Level 3 Extended Diploma-1.webp
+│   │   ├── Professionalism-1.webp
+│   │   ├── Security Awareness Foundations.webp
+│   │   ├── SIA Certificate.webp
+│   │   ├── Touch-type Read and Spell Computer Course-1.webp
+│   │   ├── Unisys 2022 Data Privacy Training.webp
+│   │   ├── Unisys 2023 Data Privacy Training.webp
+│   │   ├── Volunteering Award 2018-2019-1.webp
+│   │   ├── Workplace Health, Safety, Security Training Module 1.webp
+│   │   ├── Workplace Health, Safety, Security Training Module 2.webp
+│   │   └── Workplace Health, Safety, Security Training Module 4.webp
+│   └── Website/
+│       ├── IMG_1374.webp
+│       ├── logo.webp
+│       └── Maintenance.webp
+├── Js/
+│   ├── app.js
+│   └── mixitup.min.js
+├── Projects/
+│   ├── Inventroy Application Pics/
+│   │   └── Richard Jameson.jpeg
+│   ├── Js/
+│   │   └── Project.js
+│   ├── Projects CSS/
+│   │   ├── Project1.css
+│   │   ├── Project2.css
+│   │   ├── Project3.css
+│   │   └── Project4.css
+│   ├── Project1.html
+│   ├── Project2.html
+│   ├── Project3.html
+│   └── Project4.html
+├── Videos/
+│   ├── First Year Project.mp4
+│   ├── Imran Khan.mp4
+│   └── Personal portfolio.mp4
+├── background2.webp
+├── htaccess
+├── index.html
+├── LICENSE
+├── Muhammad Abdullah CV.pdf
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ---

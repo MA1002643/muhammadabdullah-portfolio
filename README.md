@@ -1,119 +1,389 @@
-# Personal-Portfolio
+<div id="top">
 
-Website Documentation for Personal Portfolio
+<!-- HEADER STYLE: CLASSIC -->
+<div align="center">
 
-URL: http://127.0.0.1:5500/index.html
+<h1 align="center">MUHAMMADABDULLAH-PORTFOLIO</h1>
+<p align="center"><em>Showcase Your Skills, Inspire Future Opportunities<em></p>
 
-Table of Contents 1. Introduction 2. Website Overview 3. Features 4. How It Works 5. Technologies Used 6. Folder Structure 7. Code Comments and Notation 8. Performance Optimization 9. Future Enhancements 10. Contact Information
-
-1.  Introduction
-
-The Personal Portfolio Website is a single-page web application that serves as an online representation of a developer’s skills, experience, projects, and contact information. It is designed to be modern, responsive, and interactive to enhance the user experience while showcasing the portfolio’s content professionally.
-
-2. Website Overview
-
-The website provides the following sections:
-• About Me: Introduces the developer with a summary of their professional background and education.
-• Statistics: Showcases key metrics like years of experience, projects completed, and technologies mastered.
-• Projects: Highlights completed projects with descriptions and images.
-• Contact Form: Allows users to send messages directly via email using a third-party service.
-
-3.  Features
-
-Core Features:
-• Responsive Design: Adapts seamlessly to devices with varying screen sizes.
-• Dynamic Statistics Counters: Displays animated counters for years of experience, projects completed, and code commits.
-• GitHub Integration: Fetches real-time code commits from GitHub repositories.
-• Interactive Contact Form: Enables users to send inquiries directly.
-• Smooth Animations: Provides a visually appealing experience with hover effects and transitions.
-
-Additional Features:
-• Accessibility: Designed for compatibility with assistive technologies.
-• Cross-Browser Compatibility: Works on all major browsers.
-
-4. How It Works
-
-   1. Dynamic Counters:
-      • The counters in the “Statistics” section animate dynamically based on real data fetched from GitHub or calculated based on predefined logic (e.g., years of experience).
-   2. GitHub API Integration:
-      • A JavaScript function fetches commit data from specified repositories using GitHub’s REST API.
-   3. Contact Form:
-      • The form uses formsubmit.co for email submissions. Input validation is implemented to ensure data integrity.
-   4. Responsive Design:
-      • Media queries dynamically adjust layout and styles for screen sizes ranging from desktop to mobile.
-
-5. Technologies Used
-
-Languages:
-• HTML5: Structure and semantic layout of the website.
-• CSS3: Styling and animations, including responsiveness.
-• JavaScript (ES6): Interactive features like counters, animations, and API calls.
-
-Frameworks and Libraries:
-• FontAwesome: For icons used in the contact form and other sections.
-
-APIs:
-• GitHub REST API: Fetches commit data for statistics counters.
-• FormSubmit.co: Handles email submissions from the contact form.
-
-project-root/
-├── index.html # Main HTML file
-├── css/
-│ ├── style.css # Main CSS file
-├── js/
-│ ├── script.js # Main JavaScript file
-├── images/
-│ ├── project1.jpg # Images for projects
-│ ├── ... # Other images
-└── README.md # Documentation file
-
-7. Code Comments and Notation
-
-HTML:
-• Use descriptive class and ID names for semantic clarity.
-• Example:
-
- <div class="stats-container">
-    <span id="years-experience" class="count">0</span>
-    <p>Years of Experience</p>
+<!-- BADGES -->
+<div align="center">
+<a href="https://github.com/MA1002643/muhammadabdullah-portfolio/blob/main/LICENSE" alt="license">
+   <img src="https://img.shields.io/badge/license-MIT-green?style=flat&logo=opensourceinitiative&logoColor=white" alt="MIT License" />
+</a>
+<img src="https://img.shields.io/github/last-commit/MA1002643/muhammadabdullah-portfolio?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+<a href="https://github.com/MA1002643/jokes-platform/discussions" alt="Discussions">
+   <img src="https://img.shields.io/github/discussions/MA1002643/jokes-platform" alt="Discussions" />
+</a>
+<a href="https://github.com/MA1002643/muhammadabdullah-portfolio/stargazers">
+   <img src="https://custom-icon-badges.demolab.com/github/stars/MA1002643/jokes-platform?logo=star&style=flat" alt="stars" />
+</a>
+<a href="https://github.com/MA1002643/muhammadabdullah-portfolio/issues">
+   <img src="https://custom-icon-badges.demolab.com/github/issues-raw/MA1002643/jokes-platform?logo=issue" alt="issues" />
+</a>
 </div>
+<br>
+<br>
+<div align="center"><em>Built with the tools and technologies:</em></div>
+<br>
+<br>
+<!-- TECH-STACK:START -->
 
-CSS:
-• Organized with comments for each section.
-• Example:
-/_ Header Section _/
-.header {
-background-color: #333;
-color: white;
-}
+<!-- TECH-STACK:END -->
+</div>
+<br>
 
-JavaScript:
-• Functions are modular and reusable with descriptive comments.
-• Example:
+---
 
-/\*\*
+## 📄 Table of Contents
 
-- Update the counter with animation.
-- @param {HTMLElement} counter - The element to update.
-- @param {number} target - The final count value.
-  \*/
-  const updateCounter = (counter, target) => { ... };
+- [Overview](#-overview)
+- [UI Preview](#-ui-preview)
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+  - [Project Index](#-project-index)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Installation](#-installation)
+  - [Usage](#-usage)
+  - [Testing](#-testing)
+- [Learning Outcomes](#-learning-outcomes)
+- [Roadmap](#-roadmap)
+- [Acknowledgment](#-acknowledgment)
+- [License](#-license)
 
-8. Performance Optimization
+---
 
-   1. Minimized CSS and JavaScript: Ensure smaller file sizes.
-   2. Lazy Loading: Images are optimized for faster loading.
-   3. API Requests: Error handling is implemented to prevent runtime failures.
+<a id="overview"></a>
 
-9. Future Enhancements
+## ✨ Overview
 
-   • Dark Mode: Add a toggle for light/dark themes.
-   • Progressive Web App (PWA): Make the website installable and usable offline.
-   • Localization: Support multiple languages for global reach.
-   • Advanced Analytics: Track visitor interactions using analytics tools.
+Muhammad Abdullah's portfolio is a sleek, single-page web application showcasing developer skills, projects, and stats with engaging animations and real-time data integration.  
+**Why muhammadabdullah-portfolio?**
 
-10. Contact Information
+This project provides a comprehensive, responsive portfolio website architecture, combining modern design, interactive features, and optimised server configurations for a seamless developer showcase. The core features include:
 
-    • Developer Name: Muhammad Abdullah
-    • Email: mabdullah30924@gmail.com
-    • Phone: +44 7448493342
+- 🖥️ **Responsive Design:** Ensures a seamless experience across all devices with modern styling and animations.
+- 🚀 **Performance Optimization:** Utilises server configurations like GZIP compression and caching for fast load times.
+- 🔧 **Dynamic Content:** Integrates external APIs for real-time stats and counters to showcase ongoing activity.
+- 🎨 **Interactive UI Elements:** Features sliders, filtering, animated text, and carousels to enhance user engagement.
+- 🔒 **Security & Reliability:** Implements security headers and redirects for a secure hosting environment.
+- 📊 **Rich Project Showcases:** Presents projects with multimedia, filtering, and detailed descriptions to highlight technical skills.
+
+---
+
+<a id="ui-preview"></a>
+
+## 🎨 UI Preview
+
+|                 Recipe Search                  |                Dashboard                |
+| :--------------------------------------------: | :-------------------------------------: |
+| ![Website screenshot](screenshots/Website.png) | ![Website GIF](Screenshots/Website.gif) |
+
+---
+
+<a id="features"></a>
+
+## 📌 Features
+
+|     | Component         | Details                                                                                                                                                                                               |
+| :-- | :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ⚙️  | **Architecture**  | <ul><li>Modern portfolio built with **Next.js**</li><li>Multi-section single-page layout</li><li>Responsive design using **Tailwind CSS**</li></ul>                                                   |
+| 🔩  | **Code Quality**  | <ul><li>Clean, maintainable component-based structure</li><li>Consistent coding standards and semantic markup</li><li>Well-organized styling and layout</li></ul>                                     |
+| 📄  | **Documentation** | <ul><li>Comprehensive **README** detailing setup, deployment, and project overview</li><li>Descriptive commit messages and inline clarity in components</li></ul>                                     |
+| 🔌  | **Integrations**  | <ul><li>Animated transitions powered by **Framer Motion** and **GSAP**</li><li>**Lucide Icons** and **Heroicons** for modern iconography</li><li>Deployed via **Vercel** for seamless CI/CD</li></ul> |
+| 🧩  | **Modularity**    | <ul><li>Reusable **React components** for sections like Hero, Projects, and Contact</li><li>Utility-first styling with Tailwind for scalable design</li></ul>                                         |
+| 🧪  | **Testing**       | <ul><li>Manual testing through browser and responsive viewports</li><li>Performance and accessibility checks via browser DevTools</li></ul>                                                           |
+| ⚡️ | **Performance**   | <ul><li>Optimised for fast load times using **Next.js Image Optimisation**</li><li>Static generation for improved SEO</li><li>Lightweight animations and minimal dependencies</li></ul>               |
+| 🛡️  | **Security**      | <ul><li>Static frontend with no user data collection</li><li>Served securely over HTTPS via Vercel</li></ul>                                                                                          |
+| 📦  | **Dependencies**  | <ul><li>Core: **Next.js**, **React**, **Tailwind CSS**</li><li>Animation: **Framer Motion**, **GSAP**</li><li>Icons: **Lucide React**, **Heroicons**</li></ul>                                        |
+
+---
+
+<a id="project-structure"></a>
+
+## 📁 Project Structure
+
+```sh
+└── muhammadabdullah-portfolio/
+    ├── Js
+    │   ├── app.js
+    │   └── mixitup.min.js
+    ├── Muhammad Abdullah CV.pdf
+    ├── Projects
+    │   ├── .DS_Store
+    │   ├── Inventroy Application Pics
+    │   ├── Js
+    │   ├── Project1.html
+    │   ├── Project2.html
+    │   ├── Project3.html
+    │   ├── Project4.html
+    │   └── Projects CSS
+    ├── README.md
+    ├── Videos
+    │   ├── .DS_Store
+    │   ├── First Year Project.mp4
+    │   ├── Imran Khan.mp4
+    │   └── Personal portfolio.mp4
+    ├── background2.webp
+    ├── css
+    │   ├── .DS_Store
+    │   ├── about.css
+    │   ├── contactme.css
+    │   ├── footer.css
+    │   ├── home.css
+    │   ├── navbar.css
+    │   ├── owl.carousel.min.css
+    │   ├── projects.css
+    │   ├── qualifications.css
+    │   └── scrollbar.css
+    ├── htaccess
+    ├── images
+    │   ├── .DS_Store
+    │   ├── Project
+    │   ├── Qualification
+    │   └── Website
+    ├── index.html
+    ├── package-lock.json
+    └── package.json
+```
+
+---
+
+<a id="project-index"></a>
+
+### 📑 Project Index
+
+<details open>
+	<summary><b><code>MUHAMMADABDULLAH-PORTFOLIO/</code></b></summary>
+	<!-- __root__ Submodule -->
+	<details>
+		<summary><b>__root__</b></summary>
+		<blockquote>
+			<div class='directory-path' style='padding: 8px 0; color: #666;'>
+				<code><b>⦿ __root__</b></code>
+			<table style='width: 100%; border-collapse: collapse;'>
+			<thead>
+				<tr style='background-color: #f8f9fa;'>
+					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
+					<th style='text-align: left; padding: 8px;'>Summary</th>
+				</tr>
+			</thead>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/README.md'>README.md</a></b></td>
+					<td style='padding: 8px;'>- Provides the foundational structure and styling for a modern, responsive personal portfolio website<br>- Facilitates dynamic display of developer statistics, project showcases, and a contact form, integrating external APIs for real-time data<br>- Ensures seamless user experience across devices, supporting interactive features, animations, and accessibility, thereby effectively presenting professional skills and projects within a cohesive single-page application.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/htaccess'>htaccess</a></b></td>
+					<td style='padding: 8px;'>- Defines server configurations to optimize performance, security, and user experience<br>- Implements GZIP compression for faster load times, enforces HTTPS and non-www redirects for consistent access, manages browser caching for static assets, and applies security headers to protect against common vulnerabilities<br>- Integrates essential directives to ensure a secure, efficient, and reliable web hosting environment within the overall architecture.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/package.json'>package.json</a></b></td>
+					<td style='padding: 8px;'>- Defines project dependencies, specifically integrating the Swiper library for creating responsive, touch-enabled sliders<br>- It ensures the application can leverage advanced carousel functionalities, enhancing user interaction and visual presentation across the entire codebase<br>- This setup supports dynamic content display and smooth navigation, contributing to a seamless user experience within the overall architecture.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/index.html'>index.html</a></b></td>
+					<td style='padding: 8px;'>- Index.htmlThis file serves as the main entry point for Muhammads portfolio website, orchestrating the overall structure and presentation of the site<br>- It establishes the foundational HTML framework, links to essential stylesheets and icon libraries, and integrates necessary scripts to enable dynamic and interactive features<br>- Within the broader project architecture, <code>index.html</code> functions as the central hub that renders the various sections—such as About, Projects, Qualifications, and Contact—by coordinating the inclusion of styles and scripts that facilitate a seamless, visually appealing, and user-friendly portfolio experience.</td>
+				</tr>
+			</table>
+		</blockquote>
+	</details>
+	<!-- Js Submodule -->
+	<details>
+		<summary><b>Js</b></summary>
+		<blockquote>
+			<div class='directory-path' style='padding: 8px 0; color: #666;'>
+				<code><b>⦿ Js</b></code>
+			<table style='width: 100%; border-collapse: collapse;'>
+			<thead>
+				<tr style='background-color: #f8f9fa;'>
+					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
+					<th style='text-align: left; padding: 8px;'>Summary</th>
+				</tr>
+			</thead>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Js/app.js'>app.js</a></b></td>
+					<td style='padding: 8px;'>- Provides interactive and dynamic functionalities for the website, including navigation toggling, scroll progress indication, animated text, content filtering, and counters for experience, projects, and commits<br>- Enhances user engagement and visual appeal while seamlessly integrating data from external sources like GitHub<br>- Serves as the core script orchestrating user interface behaviors across the entire project architecture.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Js/mixitup.min.js'>mixitup.min.js</a></b></td>
+					<td style='padding: 8px;'>- The <code>mixitup.min.js</code> file provides a core library that enables dynamic, animated filtering and sorting of content within web pages<br>- It serves as a foundational component for creating interactive, user-friendly interfaces where items can be seamlessly organized and displayed based on user interactions or predefined criteria<br>- As a dependency-free module, it integrates smoothly into the overall architecture, supporting features such as animated transitions, dependency management, and responsive behavior, thereby enhancing the user experience across the application.</td>
+				</tr>
+			</table>
+		</blockquote>
+	</details>
+	<!-- Projects Submodule -->
+	<details>
+		<summary><b>Projects</b></summary>
+		<blockquote>
+			<div class='directory-path' style='padding: 8px 0; color: #666;'>
+				<code><b>⦿ Projects</b></code>
+			<table style='width: 100%; border-collapse: collapse;'>
+			<thead>
+				<tr style='background-color: #f8f9fa;'>
+					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
+					<th style='text-align: left; padding: 8px;'>Summary</th>
+				</tr>
+			</thead>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project3.html'>Project3.html</a></b></td>
+					<td style='padding: 8px;'>- Defines the structure and presentation of a personal portfolio website showcasing a solo front-end project<br>- It integrates multimedia content, responsive design features, and navigation elements to deliver an engaging user experience focused on demonstrating web development skills<br>- Serves as the main webpage that introduces the project, highlights features, and provides contact links within the overall website architecture.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project4.html'>Project4.html</a></b></td>
+					<td style='padding: 8px;'>- Defines the structure and presentation of the Inventory Application webpage, showcasing project details, team members, and multimedia content<br>- It integrates visual styling, responsive layout, and navigation elements to deliver an engaging user interface aligned with the overall project architecture<br>- The page serves as a central hub for project overview, team introduction, and multimedia demonstration within the web application.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project2.html'>Project2.html</a></b></td>
+					<td style='padding: 8px;'>- Defines the main webpage layout and content for the SE Chatroom project, showcasing its features, team, and purpose<br>- It integrates multimedia, styling, and interactive elements to present a user-friendly interface that highlights the applications goal of providing a simplified, accessible chat platform with key functionalities like chat saving and theme switching within the overall architecture.</td>
+				</tr>
+				<tr style='border-bottom: 1px solid #eee;'>
+					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project1.html'>Project1.html</a></b></td>
+					<td style='padding: 8px;'>- Defines the structure and presentation of a personal portfolio website, showcasing project details, multimedia content, and contact links<br>- Integrates responsive design, animations, and print-friendly features to enhance user engagement and accessibility, serving as the main webpage that communicates individual branding and technical capabilities within the overall web project architecture.</td>
+				</tr>
+			</table>
+			<!-- Js Submodule -->
+			<details>
+				<summary><b>Js</b></summary>
+				<blockquote>
+					<div class='directory-path' style='padding: 8px 0; color: #666;'>
+						<code><b>⦿ Projects.Js</b></code>
+					<table style='width: 100%; border-collapse: collapse;'>
+					<thead>
+						<tr style='background-color: #f8f9fa;'>
+							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
+							<th style='text-align: left; padding: 8px;'>Summary</th>
+						</tr>
+					</thead>
+						<tr style='border-bottom: 1px solid #eee;'>
+							<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Js/Project.js'>Project.js</a></b></td>
+							<td style='padding: 8px;'>- Implements interactive features for the project webpage, including a countdown timer, dynamic navbar styling on scroll, a smooth scroll-up button, and a team member carousel<br>- These functionalities enhance user engagement and navigation, contributing to a more dynamic and user-friendly interface within the overall website architecture.</td>
+						</tr>
+					</table>
+				</blockquote>
+			</details>
+		</blockquote>
+	</details>
+</details>
+
+---
+
+<a id="getting-started"></a>
+
+## 🚀 Getting Started
+
+<a id="prerequisites"></a>
+
+### 📋 Prerequisites
+
+This project requires the following dependencies:
+
+- **Programming Language:** HTML
+- **Package Manager:** Npm
+
+<a id="installation"></a>
+
+### ⚙️ Installation
+
+Build muhammadabdullah-portfolio from the source and install dependencies:
+
+1. **Clone the repository:**
+
+   ```sh
+   ❯ git clone https://github.com/MA1002643/muhammadabdullah-portfolio
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```sh
+   ❯ cd muhammadabdullah-portfolio
+   ```
+
+3. **Install the dependencies:**
+
+**Using [npm](https://www.npmjs.com/):**
+
+```sh
+❯ npm install
+```
+
+<a id="usage"></a>
+
+### 💻 Usage
+
+Run the project with:
+
+**Using [npm](https://www.npmjs.com/):**
+
+```sh
+npm start
+```
+
+<a id="testing"></a>
+
+### 🧪 Testing
+
+Muhammadabdullah-portfolio uses the {**test_framework**} test framework. Run the test suite with:
+
+**Using [npm](https://www.npmjs.com/):**
+
+```sh
+npm test
+```
+
+---
+
+<a id="learning-outcomes"></a>
+
+## 🎓 Learning Outcomes
+
+- Designed and developed a **personal portfolio website** to professionally showcase projects, technical skills, and achievements — strengthening practical experience in **frontend architecture**, **component-based design**, and **modern web development workflows**.
+- Built the project using **Next.js** for a performant and SEO-friendly React framework, deepening understanding of **server-side rendering (SSR)**, **static site generation (SSG)**, and **optimized routing**.
+- Implemented a cohesive **UI/UX design** with **Tailwind CSS**, learning to efficiently manage responsive layouts, dark-themed palettes, and reusable design components consistent across pages.
+- Enhanced interactivity and motion design using **Framer Motion** and **GSAP**, gaining proficiency in **animation timing**, **scroll-based effects**, and **smooth visual transitions** that elevate user engagement.
+- Structured the codebase with modular **components**, **sections**, and **utility classes**, improving maintainability, scalability, and clarity of the project structure.
+- Deployed the website via **Vercel**, acquiring hands-on experience with **continuous deployment**, **GitHub integration**, and **production optimization** for static and hybrid Next.js sites.
+- Integrated **Lucide Icons** and **Heroicons** for a consistent, modern iconography style, refining front-end design choices aligned with accessibility and aesthetic standards.
+- Documented the repository with a clear **README**, **acknowledgments**, and structured commit history, reinforcing best practices in **version control**, **open-source documentation**, and **project presentation**.
+- Improved overall understanding of **modern frontend ecosystems** — combining **React**, **Next.js**, **Tailwind CSS**, and **animation libraries** — to deliver a polished, recruiter-ready personal portfolio.
+- Strengthened creative and technical abilities in crafting a **visually distinctive, interactive, and professional web presence**, preparing for real-world UI/UX-driven development roles.
+
+---
+
+<a id="roadmap"></a>
+
+## 📈 Roadmap
+
+- [ ] **`Task 1`**: Implement feature one.
+- [ ] **`Task 2`**: Implement feature two.
+- [ ] **`Task 3`**: Implement feature three.
+
+---
+
+<a id="acknowledgment"></a>
+
+## ✨ Acknowledgments
+
+- Design and UI inspiration drawn from modern portfolio aesthetics and community showcases — gratitude to developers and designers who share their creative work across platforms like **Dribbble**, **CodePen**, and **GitHub**, which influenced the visual direction of this portfolio.
+- Built with a **Next.js** foundation and styled using **Tailwind CSS**, ensuring a balance between performance, responsiveness, and visual flair — thanks to the **Next.js** and **Tailwind** communities for their exceptional documentation and active ecosystem.
+- Deployed seamlessly via **Vercel**, whose streamlined integration with GitHub simplified continuous deployment and preview environments.
+- Animated interactions and dynamic scrolling effects powered by **Framer Motion** and **GSAP**, enhancing the overall UX and creating smooth, engaging transitions across sections.
+- Appreciation to the **Lucide Icons** and **Heroicons** teams for providing elegant, open-source icon sets that complement the minimalist design of this project.
+- A nod to the **open-source developer community** for offering reusable components, guides, and discussions that inspired the layout, scroll animations, and component architecture of this portfolio.
+
+---
+
+<a id="license"></a>
+
+## 📜 License
+
+This project is licensed under the **[MIT License](https://github.com/MA1002643/muhammadabdullah-portfolio/blob/main/LICENSE)**. See the **[LICENSE](https://choosealicense.com/licenses/)** file for full details.
+
+#
+
+<p align="center">
+  <strong>© 2025 Muhammad Abdullah</strong><br>
+  Developed with 💙 using HTML, CSS, JavaScript<br>
+  <a href="#top"><img alt="Back to Top" src="https://img.shields.io/badge/Back_to_Top-0A0A0A?style=for-the-badge">
+</a>
+</p>

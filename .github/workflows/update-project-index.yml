@@ -40,12 +40,11 @@ jobs:
           cat > .github/tmp/update-index.mjs <<'NODE'
           import fs from 'fs';
           import path from 'path';
-          import { setTimeout as delay } from 'timers/promises';
 
-          const README_PATH = process.env.README_PATH || 'README.md';
+          const README_PATH   = process.env.README_PATH || 'README.md';
           const INDEX_HEADING = process.env.INDEX_HEADING || '### 📑 Project Index';
           const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
-          const AI_MODEL = process.env.AI_MODEL || 'gpt-4o-mini';
+          const AI_MODEL       = process.env.AI_MODEL || 'gpt-4o-mini';
 
           if (!fs.existsSync(README_PATH)) {
             console.error(`❌ README not found at ${README_PATH}`);
@@ -57,8 +56,9 @@ jobs:
             '.git','node_modules','.DS_Store','.idea','.vscode','.env','.venv',
             '.next','dist','build','coverage','.turbo','.cache'
           ]);
+          const IMAGE_RX = /\.(png|jpe?g|gif|svg|ico|webp|bmp|tiff|avif)$/i;
 
-          const MAX_SAMPLE_BYTES = 65536; // 64KB per file for better summaries
+          const MAX_SAMPLE_BYTES = 120 * 1024; // give the AI more context (120KB)
           const AI_TIMEOUT_MS = 45000;
 
           // ---------- HELPERS ----------
@@ -74,14 +74,14 @@ jobs:
           function safeRead(fileAbs, maxBytes = MAX_SAMPLE_BYTES) {
             try {
               const b = fs.readFileSync(fileAbs);
-              const head = b.subarray(0, Math.min(2048, b.length));
-              let nonText = 0;
+              const head = b.subarray(0, Math.min(4096, b.length));
+              let controlCount = 0;
               for (let i = 0; i < head.length; i++) {
                 const byte = head[i];
-                if (byte === 0) { nonText = 9999; break; }
-                if (byte < 9 || (byte > 13 && byte < 32)) nonText++;
+                if (byte === 0) { controlCount = 9999; break; }
+                if (byte < 9 || (byte > 13 && byte < 32)) controlCount++;
               }
-              const isBinary = nonText > 32;
+              const isBinary = controlCount > 48;
               if (isBinary) return { text: '(binary or non-text content omitted)', isBinary: true, size: b.length };
               return { text: b.toString('utf8', 0, Math.min(b.length, maxBytes)), isBinary: false, size: b.length };
             } catch {
@@ -93,20 +93,22 @@ jobs:
             const out = {};
             out.functions = Array.from(sample.matchAll(/\bfunction\s+([A-Za-z0-9_]+)/g)).map(m=>m[1]);
             out.exports = Array.from(sample.matchAll(/\bexport\s+(?:default\s+)?(?:function|class|const|let|var)?\s*([A-Za-z0-9_]+)/g)).map(m=>m[1]);
-            out.imports = Array.from(sample.matchAll(/\bfrom\s+['"]([^'"]+)['"]/g)).map(m=>m[1]).slice(0,6);
+            out.classes = Array.from(sample.matchAll(/\bclass\s+([A-Za-z0-9_]+)/g)).map(m=>m[1]);
+            out.hooks = Array.from(sample.matchAll(/\buse(State|Effect|Memo|Callback|Ref|Reducer|Context)\b/g)).map(m=>'use'+m[1]);
             out.routes = Array.from(sample.matchAll(/\b(app|router)\.(get|post|put|delete|patch)\(['"`]([^'"`]+)['"`]\)/g)).map(m=>`${m[2].toUpperCase()} ${m[3]}`);
-            out.react = /from\s+['"]react['"]/.test(sample) || /tsx?$/i.test(rel);
+            out.imports = Array.from(sample.matchAll(/\bfrom\s+['"]([^'"]+)['"]/g)).map(m=>m[1]).slice(0,8);
             out.next = /from\s+['"]next(\/.*)?['"]/.test(sample) || /(?:^|\/)(app|pages)\//.test(rel);
-            out.tailwind = /class(Name)?=/.test(sample) && /(bg-|text-|flex|grid|rounded|shadow)/.test(sample);
+            out.react = /from\s+['"]react['"]/.test(sample) || /tsx?$/i.test(rel);
+            out.tailwind = /class(Name)?=/.test(sample) && /(bg-|text-|flex|grid|rounded|shadow|md:|lg:)/.test(sample);
             return out;
           }
 
           function fallbackDescribe(rel, sample = '') {
+            if (IMAGE_RX.test(rel)) return path.posix.basename(rel); // image description = its filename
             const n = rel.toLowerCase();
             if (n.endsWith('/readme.md') || n === 'readme.md') return 'Project documentation with overview, setup and usage.';
             if (n.endsWith('package.json')) return 'Node package manifest defining scripts, dependencies and project metadata.';
             if (/pnpm-lock\.yaml$|yarn\.lock$|package-lock\.json$/.test(n)) return 'Dependency lockfile pinning exact versions for reproducible installs.';
-            if (/\.(png|jpg|jpeg|gif|svg|ico|webp|ttf|otf|woff2?)$/i.test(n)) return 'Static asset (image or font).';
             if (/\.(css|scss|sass)$/i.test(n)) return 'Stylesheet defining layout and utility classes.';
             if (/\.html$/i.test(n)) return 'Static HTML markup for a page or template.';
             if (/\.(ts|tsx|js|jsx)$/i.test(n)) {
@@ -115,11 +117,13 @@ jobs:
               if (sig.next) bits.push('Next.js module');
               else if (sig.react) bits.push('React component/module');
               else bits.push('JavaScript/TypeScript module');
+              if (sig.exports?.length) bits.push(`exports: ${sig.exports.slice(0,5).join(', ')}${sig.exports.length>5?'…':''}`);
+              if (sig.classes?.length) bits.push(`classes: ${sig.classes.slice(0,3).join(', ')}${sig.classes.length>3?'…':''}`);
+              if (sig.functions?.length) bits.push(`functions: ${sig.functions.slice(0,5).join(', ')}${sig.functions.length>5?'…':''}`);
+              if (sig.hooks?.length) bits.push(`hooks: ${sig.hooks.slice(0,5).join(', ')}${sig.hooks.length>5?'…':''}`);
               if (sig.routes?.length) bits.push(`routes: ${sig.routes.slice(0,3).join(', ')}${sig.routes.length>3?'…':''}`);
-              if (sig.exports?.length) bits.push(`exports: ${sig.exports.slice(0,4).join(', ')}${sig.exports.length>4?'…':''}`);
-              if (sig.functions?.length && !sig.exports.length) bits.push(`functions: ${sig.functions.slice(0,4).join(', ')}${sig.functions.length>4?'…':''}`);
+              if (sig.imports?.length) bits.push(`imports ${sig.imports.slice(0,4).join(', ')}${sig.imports.length>4?'…':''}`);
               if (sig.tailwind) bits.push('uses Tailwind utilities');
-              if (sig.imports?.length) bits.push(`imports ${sig.imports.slice(0,3).join(', ')}${sig.imports.length>3?'…':''}`);
               return bits.join('; ') + '.';
             }
             if (/\.(md|mdx)$/i.test(n)) return 'Markdown content for documentation or pages.';
@@ -129,19 +133,22 @@ jobs:
           }
 
           async function aiDescribeFile(relPath, sample) {
+            // For images, ALWAYS use the filename as description.
+            if (IMAGE_RX.test(relPath)) return path.posix.basename(relPath);
             if (!OPENAI_API_KEY) return fallbackDescribe(relPath, sample);
 
             const controller = new AbortController();
             const timer = setTimeout(() => controller.abort(), AI_TIMEOUT_MS);
 
-            // Keep prompt labels simple (avoid YAML-like "key: value" to prevent linter confusion)
-            const sys = "You are a precise repository indexer. Produce a compact, rich summary for ONE file. Write 3–5 crisp sentences (60–140 words). Explain WHAT the file is for, HOW it works, and WHAT code it contains. Mention main exports/functions/classes, routes/components, config keys, or frameworks. If binary/empty, say so and infer role if possible. No markdown headers, no filename repetition, no disclaimers. Output must be a SINGLE LINE (replace newlines with spaces). End with a period.";
+            const sys =
+              "You are a rigorous code indexer. For ONE file, produce a highly accurate, compact summary in 4–7 sentences (90–180 words) on ONE LINE. Include: the file’s role in the app; how it works; notable algorithms/logic; key exports/functions/classes/React components/hooks; important props/state/effects; routes or API endpoints; critical config keys; frameworks used (e.g., Next.js pages/app router conventions, Tailwind utilities). Prefer precise identifiers in backticks (e.g., `handler`, `Home`, `GET /api/foo`). No markdown headers. Do NOT repeat the filename. No disclaimers. Replace newlines with spaces. End with a period.";
+
             const usr =
               "PATH >> " + relPath + "\n" +
-              "CONTEXT >> personal portfolio, likely Next.js/React/Tailwind.\n" +
-              "SAMPLE(" + (sample?.length || 0) + ") >>\n" +
+              "CONTEXT >> Next.js/React/Tailwind portfolio repository.\n" +
+              "SAMPLE(" + (sample?.length || 0) + " chars) >>\n" +
               (sample || '(empty/binary)') + "\n" +
-              "RETURN >> one single-line summary (3–5 sentences).";
+              "RETURN >> one-line summary with detailed code-level specifics.";
 
             try {
               const res = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -156,8 +163,8 @@ jobs:
                     { role: 'system', content: sys },
                     { role: 'user', content: usr }
                   ],
-                  temperature: 0.15,
-                  max_tokens: 240
+                  temperature: 0.05,
+                  max_tokens: 320
                 }),
                 signal: controller.signal
               });
@@ -174,7 +181,7 @@ jobs:
               if (!text.trim()) return fallbackDescribe(relPath, sample);
 
               let line = text.replace(/\s+/g, ' ').trim();
-              if (line.length > 600) line = line.slice(0, 600).trimEnd() + '…';
+              if (line.length > 700) line = line.slice(0, 700).trimEnd() + '…';
               if (!/[.!?]$/.test(line)) line += '.';
               return line;
             } catch (e) {
@@ -194,6 +201,12 @@ jobs:
               html += '      <ul>\n';
               for (const f of files) {
                 const relPath = path.posix.join(relDir, f.name).replace(/\\/g, '/');
+                // Image rule: description is the filename itself (no AI)
+                if (IMAGE_RX.test(f.name)) {
+                  const href = path.posix.join('.', relPath);
+                  html += `         <li><b><a href="${href}">${f.name}</a></b> — ${f.name}</li>\n`;
+                  continue;
+                }
                 const { text: sample } = safeRead(path.join(abs, f.name));
                 const desc = await aiDescribeFile(relPath, sample);
                 const href = path.posix.join('.', relPath);
@@ -230,11 +243,15 @@ jobs:
               out += '      <summary><b>__root__</b></summary>\n';
               out += '      <ul>\n';
               for (const f of rootFiles) {
+                if (IMAGE_RX.test(f.name)) {
+                  const href = `./${f.name}`;
+                  out += `         <li><b><a href="${href}">${f.name}</a></b> — ${f.name}</li>\n`;
+                  continue;
+                }
                 const { text: sample } = safeRead(path.join(process.cwd(), f.name));
                 const desc = await aiDescribeFile(f.name, sample);
                 const href = `./${f.name}`;
-                const htmlLine = `         <li><b><a href="${href}">${f.name}</a></b> — ${desc}</li>\n`;
-                out += htmlLine;
+                out += `         <li><b><a href="${href}">${f.name}</a></b> — ${desc}</li>\n`;
               }
               out += '      </ul>\n';
               out += '   </details>\n';
@@ -279,7 +296,7 @@ jobs:
             }
 
             fs.writeFileSync(README_PATH, updated, 'utf8');
-            console.log('✅ Project Index updated in README (rich AI summaries).');
+            console.log('✅ Project Index updated in README (code-detailed summaries; images use filename).');
           })().catch(e => { console.error('❌ Failed:', e); process.exit(1); });
           NODE
 
@@ -310,7 +327,7 @@ jobs:
           fi
 
           git add "${README_PATH}"
-          git commit -m "docs: auto-update 📑 Project Index with rich AI summaries" || true
+          git commit -m "docs: auto-update 📑 Project Index with code-detailed summaries (image names only)" || true
 
           git fetch origin "${BRANCH}"
           git pull --rebase --autostash origin "${BRANCH}" || true

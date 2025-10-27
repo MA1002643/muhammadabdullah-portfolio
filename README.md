@@ -201,115 +201,161 @@ This project provides a comprehensive, responsive portfolio website architecture
 ### 📑 Project Index
 
 <details open>
-	<summary><b><code>MUHAMMADABDULLAH-PORTFOLIO/</code></b></summary>
-	<!-- __root__ Submodule -->
-	<details>
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ __root__</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/README.md'>README.md</a></b></td>
-					<td style='padding: 8px;'>- Provides the foundational structure and styling for a modern, responsive personal portfolio website<br>- Facilitates dynamic display of developer statistics, project showcases, and a contact form, integrating external APIs for real-time data<br>- Ensures seamless user experience across devices, supporting interactive features, animations, and accessibility, thereby effectively presenting professional skills and projects within a cohesive single-page application.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/htaccess'>htaccess</a></b></td>
-					<td style='padding: 8px;'>- Defines server configurations to optimize performance, security, and user experience<br>- Implements GZIP compression for faster load times, enforces HTTPS and non-www redirects for consistent access, manages browser caching for static assets, and applies security headers to protect against common vulnerabilities<br>- Integrates essential directives to ensure a secure, efficient, and reliable web hosting environment within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>- Defines project dependencies, specifically integrating the Swiper library for creating responsive, touch-enabled sliders<br>- It ensures the application can leverage advanced carousel functionalities, enhancing user interaction and visual presentation across the entire codebase<br>- This setup supports dynamic content display and smooth navigation, contributing to a seamless user experience within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/index.html'>index.html</a></b></td>
-					<td style='padding: 8px;'>- Index.htmlThis file serves as the main entry point for Muhammads portfolio website, orchestrating the overall structure and presentation of the site<br>- It establishes the foundational HTML framework, links to essential stylesheets and icon libraries, and integrates necessary scripts to enable dynamic and interactive features<br>- Within the broader project architecture, <code>index.html</code> functions as the central hub that renders the various sections—such as About, Projects, Qualifications, and Contact—by coordinating the inclusion of styles and scripts that facilitate a seamless, visually appealing, and user-friendly portfolio experience.</td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
-	<!-- Js Submodule -->
-	<details>
-		<summary><b>Js</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ Js</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Js/app.js'>app.js</a></b></td>
-					<td style='padding: 8px;'>- Provides interactive and dynamic functionalities for the website, including navigation toggling, scroll progress indication, animated text, content filtering, and counters for experience, projects, and commits<br>- Enhances user engagement and visual appeal while seamlessly integrating data from external sources like GitHub<br>- Serves as the core script orchestrating user interface behaviors across the entire project architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Js/mixitup.min.js'>mixitup.min.js</a></b></td>
-					<td style='padding: 8px;'>- The <code>mixitup.min.js</code> file provides a core library that enables dynamic, animated filtering and sorting of content within web pages<br>- It serves as a foundational component for creating interactive, user-friendly interfaces where items can be seamlessly organized and displayed based on user interactions or predefined criteria<br>- As a dependency-free module, it integrates smoothly into the overall architecture, supporting features such as animated transitions, dependency management, and responsive behavior, thereby enhancing the user experience across the application.</td>
-				</tr>
-			</table>
-		</blockquote>
-	</details>
-	<!-- Projects Submodule -->
-	<details>
-		<summary><b>Projects</b></summary>
-		<blockquote>
-			<div class='directory-path' style='padding: 8px 0; color: #666;'>
-				<code><b>⦿ Projects</b></code>
-			<table style='width: 100%; border-collapse: collapse;'>
-			<thead>
-				<tr style='background-color: #f8f9fa;'>
-					<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-					<th style='text-align: left; padding: 8px;'>Summary</th>
-				</tr>
-			</thead>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project3.html'>Project3.html</a></b></td>
-					<td style='padding: 8px;'>- Defines the structure and presentation of a personal portfolio website showcasing a solo front-end project<br>- It integrates multimedia content, responsive design features, and navigation elements to deliver an engaging user experience focused on demonstrating web development skills<br>- Serves as the main webpage that introduces the project, highlights features, and provides contact links within the overall website architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project4.html'>Project4.html</a></b></td>
-					<td style='padding: 8px;'>- Defines the structure and presentation of the Inventory Application webpage, showcasing project details, team members, and multimedia content<br>- It integrates visual styling, responsive layout, and navigation elements to deliver an engaging user interface aligned with the overall project architecture<br>- The page serves as a central hub for project overview, team introduction, and multimedia demonstration within the web application.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project2.html'>Project2.html</a></b></td>
-					<td style='padding: 8px;'>- Defines the main webpage layout and content for the SE Chatroom project, showcasing its features, team, and purpose<br>- It integrates multimedia, styling, and interactive elements to present a user-friendly interface that highlights the applications goal of providing a simplified, accessible chat platform with key functionalities like chat saving and theme switching within the overall architecture.</td>
-				</tr>
-				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Project1.html'>Project1.html</a></b></td>
-					<td style='padding: 8px;'>- Defines the structure and presentation of a personal portfolio website, showcasing project details, multimedia content, and contact links<br>- Integrates responsive design, animations, and print-friendly features to enhance user engagement and accessibility, serving as the main webpage that communicates individual branding and technical capabilities within the overall web project architecture.</td>
-				</tr>
-			</table>
-			<!-- Js Submodule -->
-			<details>
-				<summary><b>Js</b></summary>
-				<blockquote>
-					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ Projects.Js</b></code>
-					<table style='width: 100%; border-collapse: collapse;'>
-					<thead>
-						<tr style='background-color: #f8f9fa;'>
-							<th style='width: 30%; text-align: left; padding: 8px;'>File Name</th>
-							<th style='text-align: left; padding: 8px;'>Summary</th>
-						</tr>
-					</thead>
-						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='https://github.com/MA1002643/muhammadabdullah-portfolio/blob/master/Projects/Js/Project.js'>Project.js</a></b></td>
-							<td style='padding: 8px;'>- Implements interactive features for the project webpage, including a countdown timer, dynamic navbar styling on scroll, a smooth scroll-up button, and a team member carousel<br>- These functionalities enhance user engagement and navigation, contributing to a more dynamic and user-friendly interface within the overall website architecture.</td>
-						</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
+   <summary><b>MUHAMMADABDULLAH-PORTFOLIO/</b></summary>
+   <details>
+      <summary><b>__root__</b></summary>
+      <ul>
+         <li><b><a href="./background2.webp">background2.webp</a></b> — File.</li>
+         <li><b><a href="./htaccess">htaccess</a></b> — File.</li>
+         <li><b><a href="./index.html">index.html</a></b> — HTML page.</li>
+         <li><b><a href="./LICENSE">LICENSE</a></b> — File.</li>
+         <li><b><a href="./Muhammad Abdullah CV.pdf">Muhammad Abdullah CV.pdf</a></b> — File.</li>
+         <li><b><a href="./package-lock.json">package-lock.json</a></b> — Lockfile with exact dependency versions.</li>
+         <li><b><a href="./package.json">package.json</a></b> — Npm manifest (dependencies & scripts).</li>
+         <li><b><a href="./README.md">README.md</a></b> — Project documentation, overview and setup instructions.</li>
+      </ul>
+   </details>
+   <details>
+      <summary><b>.github</b></summary>
+      <ul>
+         <li><b><a href=".github/CODEOWNERS">CODEOWNERS</a></b> — File.</li>
+      </ul>
+      <details>
+         <summary><b>workflows</b></summary>
+      <ul>
+         <li><b><a href=".github/workflows/update-project-index.yml">update-project-index.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-project-structure.yml">update-project-structure.yml</a></b> — File.</li>
+         <li><b><a href=".github/workflows/update-tech-badges-single-repo.yml">update-tech-badges-single-repo.yml</a></b> — File.</li>
+      </ul>
+      </details>
+   </details>
+
+   <details>
+      <summary><b>css</b></summary>
+      <ul>
+         <li><b><a href="css/about.css">about.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/contactme.css">contactme.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/footer.css">footer.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/home.css">home.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/navbar.css">navbar.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/owl.carousel.min.css">owl.carousel.min.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/projects.css">projects.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/qualifications.css">qualifications.css</a></b> — Stylesheet.</li>
+         <li><b><a href="css/scrollbar.css">scrollbar.css</a></b> — Stylesheet.</li>
+      </ul>
+   </details>
+
+   <details>
+      <summary><b>images</b></summary>
+      <details>
+         <summary><b>Project</b></summary>
+      <ul>
+         <li><b><a href="images/Project/Chatroom.webp">Chatroom.webp</a></b> — File.</li>
+         <li><b><a href="images/Project/IMRAN KHAN.webp">IMRAN KHAN.webp</a></b> — File.</li>
+         <li><b><a href="images/Project/man.webp">man.webp</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>Qualification</b></summary>
+      <ul>
+         <li><b><a href="images/Qualification/2022 Code of Ethics Training & Certification.webp">2022 Code of Ethics Training & Certification.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/2023 Unisys Data Privacy Training.webp">2023 Unisys Data Privacy Training.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/ACT_Awareness_eLearning_page.webp">ACT_Awareness_eLearning_page.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/ACT_for_Education.webp">ACT_for_Education.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Attendance-1.webp">Attendance-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Attitude to Learning-1.webp">Attitude to Learning-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/B.1 Certificate.webp">B.1 Certificate.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp">BCS Level 2 ECDL Certificate in IT Appliction Skills (QCF)-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Behaviour-1.webp">Behaviour-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/CCTV Certificate.webp">CCTV Certificate.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Certificate.pdf">Certificate.pdf</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Emergency First Aid at Work.webp">Emergency First Aid at Work.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Enrichment-1.webp">Enrichment-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/GCSE English-1.webp">GCSE English-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/GCSE Maths-1.webp">GCSE Maths-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Get Licensed Cyber Security.webp">Get Licensed Cyber Security.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Get Licensed Fire Marshal.webp">Get Licensed Fire Marshal.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Get Licensed Introduction to Risk Assessment.webp">Get Licensed Introduction to Risk Assessment.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Get Licensed Mental Health Awareness.webp">Get Licensed Mental Health Awareness.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Get Licensed Workplace Health and Safety.webp">Get Licensed Workplace Health and Safety.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Hundcuff Certificate.webp">Hundcuff Certificate.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Intellectual Property &Trade Secrets.webp">Intellectual Property &Trade Secrets.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Learner Voice Award 2020-2021-1.webp">Learner Voice Award 2020-2021-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Lockdown Legend-1.webp">Lockdown Legend-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp">OCNLR Entry Level Certificate in Digital Skills (Entry 3)-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/OCNLR Level 1 Certificate in Digital Skills-1.webp">OCNLR Level 1 Certificate in Digital Skills-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Pearson BTEC Level 3 Extended Diploma-1.webp">Pearson BTEC Level 3 Extended Diploma-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Professionalism-1.webp">Professionalism-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Security Awareness Foundations.webp">Security Awareness Foundations.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/SIA Certificate.webp">SIA Certificate.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Touch-type Read and Spell Computer Course-1.webp">Touch-type Read and Spell Computer Course-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Unisys 2022 Data Privacy Training.webp">Unisys 2022 Data Privacy Training.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Unisys 2023 Data Privacy Training.webp">Unisys 2023 Data Privacy Training.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Volunteering Award 2018-2019-1.webp">Volunteering Award 2018-2019-1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 1.webp">Workplace Health, Safety, Security Training Module 1.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 2.webp">Workplace Health, Safety, Security Training Module 2.webp</a></b> — File.</li>
+         <li><b><a href="images/Qualification/Workplace Health, Safety, Security Training Module 4.webp">Workplace Health, Safety, Security Training Module 4.webp</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>Website</b></summary>
+      <ul>
+         <li><b><a href="images/Website/IMG_1374.webp">IMG_1374.webp</a></b> — File.</li>
+         <li><b><a href="images/Website/logo.webp">logo.webp</a></b> — File.</li>
+         <li><b><a href="images/Website/Maintenance.webp">Maintenance.webp</a></b> — File.</li>
+      </ul>
+      </details>
+   </details>
+
+   <details>
+      <summary><b>Js</b></summary>
+      <ul>
+         <li><b><a href="Js/app.js">app.js</a></b> — WebSocket-related JavaScript.</li>
+         <li><b><a href="Js/mixitup.min.js">mixitup.min.js</a></b> — JavaScript file.</li>
+      </ul>
+   </details>
+
+   <details>
+      <summary><b>Projects</b></summary>
+      <ul>
+         <li><b><a href="Projects/Project1.html">Project1.html</a></b> — HTML page.</li>
+         <li><b><a href="Projects/Project2.html">Project2.html</a></b> — HTML page.</li>
+         <li><b><a href="Projects/Project3.html">Project3.html</a></b> — HTML page.</li>
+         <li><b><a href="Projects/Project4.html">Project4.html</a></b> — HTML page.</li>
+      </ul>
+      <details>
+         <summary><b>Inventroy Application Pics</b></summary>
+      <ul>
+         <li><b><a href="Projects/Inventroy Application Pics/Richard Jameson.jpeg">Richard Jameson.jpeg</a></b> — File.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>Js</b></summary>
+      <ul>
+         <li><b><a href="Projects/Js/Project.js">Project.js</a></b> — JavaScript file.</li>
+      </ul>
+      </details>
+      <details>
+         <summary><b>Projects CSS</b></summary>
+      <ul>
+         <li><b><a href="Projects/Projects CSS/Project1.css">Project1.css</a></b> — Stylesheet.</li>
+         <li><b><a href="Projects/Projects CSS/Project2.css">Project2.css</a></b> — Stylesheet.</li>
+         <li><b><a href="Projects/Projects CSS/Project3.css">Project3.css</a></b> — Stylesheet.</li>
+         <li><b><a href="Projects/Projects CSS/Project4.css">Project4.css</a></b> — Stylesheet.</li>
+      </ul>
+      </details>
+   </details>
+
+   <details>
+      <summary><b>Videos</b></summary>
+      <ul>
+         <li><b><a href="Videos/First Year Project.mp4">First Year Project.mp4</a></b> — File.</li>
+         <li><b><a href="Videos/Imran Khan.mp4">Imran Khan.mp4</a></b> — File.</li>
+         <li><b><a href="Videos/Personal portfolio.mp4">Personal portfolio.mp4</a></b> — File.</li>
+      </ul>
+   </details>
+
+
 </details>
 
 ---

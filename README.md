@@ -191,6 +191,7 @@ This project provides a comprehensive, responsive portfolio website architecture
 │   ├── First Year Project.mp4
 │   ├── Imran Khan.mp4
 │   └── Personal portfolio.mp4
+├── .gitignore
 ├── background2.webp
 ├── htaccess
 ├── index.html

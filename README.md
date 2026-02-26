@@ -213,6 +213,7 @@ This project provides a comprehensive, responsive portfolio website architecture
    <details>
       <summary><b>__root__</b></summary>
       <ul>
+         <li><b><a href="./.gitignore">.gitignore</a></b> — Repository file.</li>
          <li><b><a href="./background2.webp">background2.webp</a></b> — background2.webp</li>
          <li><b><a href="./htaccess">htaccess</a></b> — Repository file.</li>
          <li><b><a href="./index.html">index.html</a></b> — Static HTML markup for a page or template.</li>

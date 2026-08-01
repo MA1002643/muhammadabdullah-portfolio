@@ -123,6 +123,10 @@ This project provides a comprehensive, responsive portfolio website architecture
 │   ├── projects.css
 │   ├── qualifications.css
 │   └── scrollbar.css
+├── docs/
+│   └── audit/
+│       ├── AUDIT.md
+│       └── lighthouse-baseline-mobile.json
 ├── images/
 │   ├── Project/
 │   │   ├── Chatroom.webp

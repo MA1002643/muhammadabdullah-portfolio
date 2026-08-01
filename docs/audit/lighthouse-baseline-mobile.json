@@ -1,0 +1,43 @@
+{
+  "fetchTime": "2026-07-31T01:35:50.505Z",
+  "lighthouseVersion": "13.4.1",
+  "categories": {
+    "performance": {
+      "score": 0.45
+    },
+    "accessibility": {
+      "score": 0.59
+    },
+    "best-practices": {
+      "score": 0.69
+    },
+    "seo": {
+      "score": 0.73
+    }
+  },
+  "metrics": {
+    "first-contentful-paint": "3.8\u00a0s",
+    "largest-contentful-paint": "13.5\u00a0s",
+    "total-blocking-time": "10\u00a0ms",
+    "cumulative-layout-shift": "0.522",
+    "speed-index": "3.8\u00a0s",
+    "interactive": "13.9\u00a0s"
+  },
+  "failedAudits": {
+    "errors-in-console": "Browser errors were logged to the console",
+    "image-aspect-ratio": "Displays images with incorrect aspect ratio",
+    "third-party-cookies": "Uses third-party cookies",
+    "button-name": "Buttons do not have an accessible name",
+    "color-contrast": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "heading-order": "Heading elements are not in a sequentially-descending order",
+    "html-has-lang": "`<html>` element does not have a `[lang]` attribute",
+    "image-alt": "Image elements do not have `[alt]` attributes",
+    "landmark-one-main": "Document does not have a main landmark.",
+    "link-name": "Links do not have a discernible name",
+    "list": "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).",
+    "target-size": "Touch targets do not have sufficient size or spacing.",
+    "inspector-issues": "Issues were logged in the `Issues` panel in Chrome Devtools",
+    "meta-description": "Document does not have a meta description",
+    "link-text": "Links do not have descriptive text"
+  }
+}

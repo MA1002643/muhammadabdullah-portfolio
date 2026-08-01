@@ -223,64 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter(projectsCompletedElement, projectsCompleted);
   };
 
-  // Fetch total commits from GitHub repositories
-  const fetchTotalCommits = async () => {
-    const repositories = [
-      "MA1002643/Personal-Portfolio",
-      "MA1002643/FoodWebsite",
-      "Wellbeing-Unisys/WellbeingUnisys",
-      "MA1002643/Glowing-Gradient-Circle-Text-Animation",
-      "MA1002643/HangMan",
-      "MA1002643/Simple_Rectangle",
-      "MA1002643/Button_Code",
-      "MA1002643/AMC",
-      "MA1002643/Programming-Two",
-      "MA1002643/Programming-One",
-      "MA1002643/Singer-Website",
-      "MA1002643/Grade-Calculator",
-      "MA1002643/Article-Server",
-      "MA1002643/First-Year-Final-Group-Project",
-      "MA1002643/CodeQuality",
-      "MA1002643/BlackjackSim",
-      "MA1002643/CahtWeb",
-      "ManMetMobComp/mobcomp-assessment-MA1002643",
-    ];
-
-    const githubToken = "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"; // Add your token here
-    const headers = githubToken
-      ? { Authorization: `token ${githubToken}` }
-      : {};
-
-    let totalCommits = 0;
-
-    for (const repo of repositories) {
-      let page = 1;
-      let hasMore = true;
-
-      while (hasMore) {
-        try {
-          const response = await fetch(
-            `https://api.github.com/repos/${repo}/commits?per_page=100&page=${page}`,
-            { headers }
-          );
-
-          if (!response.ok)
-            throw new Error(`Failed to fetch commits for ${repo}`);
-
-          const commits = await response.json();
-          totalCommits += commits.length;
-
-          if (commits.length < 100) hasMore = false; // End of paginated results
-          page++;
-        } catch (error) {
-          console.error(`Error fetching commits for ${repo}:`, error);
-          hasMore = false;
-        }
-      }
-    }
-
+  // Commit count is a static snapshot (2026-07-31) — no client-side GitHub
+  // API calls allowed here; build-time computation arrives with #34.
+  const initializeCommitCounter = () => {
     const codeCommitsElement = document.getElementById("code-commits");
-    updateCounter(codeCommitsElement, totalCommits);
+    const target = parseInt(codeCommitsElement.dataset.target, 10) || 0;
+    updateCounter(codeCommitsElement, target);
   };
 
   // Populate the number of skills mastered
@@ -306,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize all counters
   initializeCounters();
-  fetchTotalCommits();
+  initializeCommitCounter();
 
   // Initialize Skills Mastered Counter
   updateTechnologiesMasteredCount();

@@ -265,6 +265,17 @@ This project provides a comprehensive, responsive portfolio website architecture
    </details>
 
    <details>
+      <summary><b>docs</b></summary>
+      <details>
+         <summary><b>audit</b></summary>
+      <ul>
+         <li><b><a href="docs/audit/AUDIT.md">AUDIT.md</a></b> — Markdown content for documentation or pages.</li>
+         <li><b><a href="docs/audit/lighthouse-baseline-mobile.json">lighthouse-baseline-mobile.json</a></b> — JSON data or configuration.</li>
+      </ul>
+      </details>
+   </details>
+
+   <details>
       <summary><b>images</b></summary>
       <details>
          <summary><b>Project</b></summary>
